@@ -36,6 +36,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_File_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Help_CheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_Help_About = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,8 +49,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SplashBrowser = new System.Windows.Forms.WebBrowser();
-            this.Menu_Help_CheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Tools_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -62,6 +64,7 @@
             // 
             this.Menu_.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_File,
+            this.Menu_Tools,
             this.Menu_Help});
             this.Menu_.Location = new System.Drawing.Point(0, 0);
             this.Menu_.Name = "Menu_";
@@ -123,6 +126,18 @@
             this.Menu_Help.Name = "Menu_Help";
             this.Menu_Help.Size = new System.Drawing.Size(44, 20);
             this.Menu_Help.Text = "Help";
+            // 
+            // Menu_Help_CheckForUpdates
+            // 
+            this.Menu_Help_CheckForUpdates.Name = "Menu_Help_CheckForUpdates";
+            this.Menu_Help_CheckForUpdates.Size = new System.Drawing.Size(173, 22);
+            this.Menu_Help_CheckForUpdates.Text = "Check For Updates";
+            this.Menu_Help_CheckForUpdates.Click += new System.EventHandler(this.Menu_Help_CheckForUpdates_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
             // 
             // Menu_Help_About
             // 
@@ -238,17 +253,20 @@
             this.SplashBrowser.TabIndex = 0;
             this.SplashBrowser.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
             // 
-            // Menu_Help_CheckForUpdates
+            // Menu_Tools
             // 
-            this.Menu_Help_CheckForUpdates.Name = "Menu_Help_CheckForUpdates";
-            this.Menu_Help_CheckForUpdates.Size = new System.Drawing.Size(173, 22);
-            this.Menu_Help_CheckForUpdates.Text = "Check For Updates";
-            this.Menu_Help_CheckForUpdates.Click += new System.EventHandler(this.Menu_Help_CheckForUpdates_Click);
+            this.Menu_Tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Tools_Options});
+            this.Menu_Tools.Name = "Menu_Tools";
+            this.Menu_Tools.Size = new System.Drawing.Size(48, 20);
+            this.Menu_Tools.Text = "Tools";
             // 
-            // toolStripSeparator2
+            // Menu_Tools_Options
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
+            this.Menu_Tools_Options.Name = "Menu_Tools_Options";
+            this.Menu_Tools_Options.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Tools_Options.Text = "Options";
+            this.Menu_Tools_Options.Click += new System.EventHandler(this.Menu_Tools_Options_Click);
             // 
             // Splash
             // 
@@ -298,6 +316,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Menu_Help_CheckForUpdates;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Tools;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Options;
 
 
     }

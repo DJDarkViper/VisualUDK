@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 
 namespace VisualUDK
@@ -61,6 +62,12 @@ namespace VisualUDK
         private void Menu_Help_CheckForUpdates_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_Tools_Options_Click(object sender, EventArgs e)
+        {
+            Options op = new Options();
+            op.Show();
         }
 
         
