@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace VisualUDK
+namespace VisualUDK.Popups.Wizards
 {
-    public partial class Splash : Form
+    public partial class NewProject : Form
     {
-        public Splash()
+        public NewProject()
         {
             InitializeComponent();
         }

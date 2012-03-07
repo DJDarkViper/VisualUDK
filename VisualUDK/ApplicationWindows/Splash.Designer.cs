@@ -84,6 +84,7 @@
             this.Menu_File_Exit.Name = "Menu_File_Exit";
             this.Menu_File_Exit.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_Exit.Text = "Exit";
+            this.Menu_File_Exit.Click += new System.EventHandler(this.Menu_File_Exit_Click);
             // 
             // Menu_Help
             // 
@@ -98,6 +99,7 @@
             this.Menu_Help_About.Name = "Menu_Help_About";
             this.Menu_Help_About.Size = new System.Drawing.Size(152, 22);
             this.Menu_Help_About.Text = "About";
+            this.Menu_Help_About.Click += new System.EventHandler(this.Menu_Help_About_Click);
             // 
             // panel1
             // 
@@ -133,6 +135,7 @@
             this.But_NewProject.TabIndex = 0;
             this.But_NewProject.Text = "New Project";
             this.But_NewProject.UseVisualStyleBackColor = true;
+            this.But_NewProject.Click += new System.EventHandler(this.But_NewProject_Click);
             // 
             // But_OpenProject
             // 
@@ -143,6 +146,7 @@
             this.But_OpenProject.TabIndex = 1;
             this.But_OpenProject.Text = "Open Project";
             this.But_OpenProject.UseVisualStyleBackColor = true;
+            this.But_OpenProject.Click += new System.EventHandler(this.But_OpenProject_Click);
             // 
             // panel3
             // 
@@ -207,18 +211,21 @@
             this.Menu_File_NewProject.Name = "Menu_File_NewProject";
             this.Menu_File_NewProject.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_NewProject.Text = "New Project";
+            this.Menu_File_NewProject.Click += new System.EventHandler(this.Menu_File_NewProject_Click);
             // 
             // Menu_File_OpenProject
             // 
             this.Menu_File_OpenProject.Name = "Menu_File_OpenProject";
             this.Menu_File_OpenProject.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_OpenProject.Text = "Open Project";
+            this.Menu_File_OpenProject.Click += new System.EventHandler(this.Menu_File_OpenProject_Click);
             // 
             // Menu_File_RecentProjects
             // 
             this.Menu_File_RecentProjects.Name = "Menu_File_RecentProjects";
             this.Menu_File_RecentProjects.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_RecentProjects.Text = "Recent Projects";
+            this.Menu_File_RecentProjects.Click += new System.EventHandler(this.Menu_File_RecentProjects_Click);
             // 
             // toolStripSeparator1
             // 
@@ -236,6 +243,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Splash";
             this.Text = "VisualUDK";
+            this.Load += new System.EventHandler(this.Splash_Load);
             this.Menu_.ResumeLayout(false);
             this.Menu_.PerformLayout();
             this.panel1.ResumeLayout(false);
