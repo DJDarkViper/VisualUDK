@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using VisualUDK.UDKDataSetTableAdapters;
 using System.Data.SqlClient;
 using System.Data;
@@ -21,8 +22,18 @@ namespace VisualUDK
 
         public static Boolean updateEnginePath(String path)
         {
-            query.UpdateEnginePath(path);
-            return true;
+            try
+            {
+                query.UpdateEnginePath(path); // attempt query
+                if (Settings.getEnginePath() == path)
+                    return true;
+                else return false;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Could not update engine path at this time, please try again");
+                return false;
+            }
         }
     }
 }
