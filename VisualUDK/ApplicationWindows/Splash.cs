@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VisualUDK.Popups.Wizards;
 
 namespace VisualUDK
 {
@@ -23,7 +24,8 @@ namespace VisualUDK
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
-
+            NewProject np = new NewProject();
+            np.Show();
         }
 
         private void But_OpenProject_Click(object sender, EventArgs e)

@@ -60,6 +60,13 @@ namespace VisualUDK.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap header_newproject {
+            get {
+                object obj = ResourceManager.GetObject("header_newproject", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap unreal_logo {
             get {
                 object obj = ResourceManager.GetObject("unreal-logo", resourceCulture);
