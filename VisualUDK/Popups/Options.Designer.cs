@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_EnginePath = new System.Windows.Forms.TextBox();
             this.But_EngineBrowse = new System.Windows.Forms.Button();
+            this.browseForEngine = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -130,6 +131,7 @@
             this.But_EngineBrowse.TabIndex = 2;
             this.But_EngineBrowse.Text = "Browse";
             this.But_EngineBrowse.UseVisualStyleBackColor = true;
+            this.But_EngineBrowse.Click += new System.EventHandler(this.But_EngineBrowse_Click);
             // 
             // Options
             // 
@@ -161,6 +163,7 @@
         private System.Windows.Forms.TextBox txt_EnginePath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button But_EngineBrowse;
+        private System.Windows.Forms.FolderBrowserDialog browseForEngine;
 
     }
 }
