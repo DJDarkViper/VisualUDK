@@ -6,13 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using VisualUDK.UDKDataSetTableAdapters;
 
 namespace VisualUDK.Popups
 {
     public partial class Options : Form
     {
-        QueriesTableAdapter query = new QueriesTableAdapter();
         public Options()
         {
             InitializeComponent();
@@ -20,7 +18,7 @@ namespace VisualUDK.Popups
 
         private void Options_Load(object sender, EventArgs e)
         {
-            txt_EnginePath.Text = query.FetchEnginePath();
+            txt_EnginePath.Text = Settings.getEnginePath();
         }
 
         private void But_EngineBrowse_Click(object sender, EventArgs e)

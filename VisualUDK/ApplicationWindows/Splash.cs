@@ -15,9 +15,7 @@ namespace VisualUDK
 {
     public partial class Splash : Form
     {
-        QueriesTableAdapter query = new QueriesTableAdapter();
-
-
+        
         public Splash()
         {
             InitializeComponent();
@@ -30,8 +28,8 @@ namespace VisualUDK
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
-            
-            String enginePath = query.FetchEnginePath();
+
+            String enginePath = Settings.getEnginePath();
             
             if(File.Exists(enginePath+"Engine/Config/BaseEngine.ini")) {
                 NewProject np = new NewProject();
