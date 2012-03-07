@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.But_Submit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_EnginePath = new System.Windows.Forms.TextBox();
             this.But_EngineBrowse = new System.Windows.Forms.Button();
+            this.txt_EnginePath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.browseForEngine = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,15 +53,6 @@
             this.panel1.Size = new System.Drawing.Size(608, 28);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 170);
-            this.panel2.TabIndex = 1;
-            // 
             // But_Submit
             // 
             this.But_Submit.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -72,6 +63,15 @@
             this.But_Submit.TabIndex = 0;
             this.But_Submit.Text = "Submit Changes";
             this.But_Submit.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(608, 170);
+            this.panel2.TabIndex = 1;
             // 
             // tabControl1
             // 
@@ -97,15 +97,23 @@
             this.tabPage1.Text = "Engine";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // But_EngineBrowse
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(600, 144);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Editor";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.But_EngineBrowse.Location = new System.Drawing.Point(359, 12);
+            this.But_EngineBrowse.Name = "But_EngineBrowse";
+            this.But_EngineBrowse.Size = new System.Drawing.Size(75, 23);
+            this.But_EngineBrowse.TabIndex = 2;
+            this.But_EngineBrowse.Text = "Browse";
+            this.But_EngineBrowse.UseVisualStyleBackColor = true;
+            this.But_EngineBrowse.Click += new System.EventHandler(this.But_EngineBrowse_Click);
+            // 
+            // txt_EnginePath
+            // 
+            this.txt_EnginePath.Location = new System.Drawing.Point(82, 14);
+            this.txt_EnginePath.Name = "txt_EnginePath";
+            this.txt_EnginePath.Size = new System.Drawing.Size(271, 20);
+            this.txt_EnginePath.TabIndex = 1;
+            this.txt_EnginePath.TextChanged += new System.EventHandler(this.txt_EnginePath_TextChanged);
             // 
             // label1
             // 
@@ -116,22 +124,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Engine Path:";
             // 
-            // txt_EnginePath
+            // tabPage2
             // 
-            this.txt_EnginePath.Location = new System.Drawing.Point(82, 14);
-            this.txt_EnginePath.Name = "txt_EnginePath";
-            this.txt_EnginePath.Size = new System.Drawing.Size(271, 20);
-            this.txt_EnginePath.TabIndex = 1;
-            // 
-            // But_EngineBrowse
-            // 
-            this.But_EngineBrowse.Location = new System.Drawing.Point(359, 12);
-            this.But_EngineBrowse.Name = "But_EngineBrowse";
-            this.But_EngineBrowse.Size = new System.Drawing.Size(75, 23);
-            this.But_EngineBrowse.TabIndex = 2;
-            this.But_EngineBrowse.Text = "Browse";
-            this.But_EngineBrowse.UseVisualStyleBackColor = true;
-            this.But_EngineBrowse.Click += new System.EventHandler(this.But_EngineBrowse_Click);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(600, 144);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Editor";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Options
             // 
@@ -143,6 +144,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Options";
             this.Text = "Options & Settings";
+            this.Load += new System.EventHandler(this.Options_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

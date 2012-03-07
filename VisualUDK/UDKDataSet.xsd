@@ -93,6 +93,16 @@ FROM            projects</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
+          <DbSource ConnectionRef="UDKConnectionString (Settings)" DbObjectName="options" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="FetchEnginePath" MethodsParameterType="CLR" Modifier="Public" Name="FetchEnginePath" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FetchEnginePath">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        value
+FROM            options
+WHERE        (setting = 'enginePath')</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>

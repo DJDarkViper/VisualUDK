@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,15 @@ using System.Text;
 using System.Windows.Forms;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
+using VisualUDK.UDKDataSetTableAdapters;
 
 namespace VisualUDK
 {
     public partial class Splash : Form
     {
+        QueriesTableAdapter query = new QueriesTableAdapter();
+
+
         public Splash()
         {
             InitializeComponent();
@@ -25,8 +30,17 @@ namespace VisualUDK
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
-            NewProject np = new NewProject();
-            np.Show();
+            
+            String enginePath = query.FetchEnginePath();
+            
+            if(File.Exists(enginePath+"Engine/Config/BaseEngine.ini")) {
+                NewProject np = new NewProject();
+                np.Show();
+            } else {
+                MessageBox.Show("Engine Path has not been set correctly");
+                Options op = new Options();
+                op.Show();
+            }
         }
 
         private void But_OpenProject_Click(object sender, EventArgs e)

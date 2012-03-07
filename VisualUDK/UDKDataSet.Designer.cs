@@ -1664,11 +1664,16 @@ namespace VisualUDK.UDKDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[1];
+            this._commandCollection = new global::System.Data.IDbCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlServerCe.SqlCeCommand();
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlServerCe.SqlCeConnection(global::VisualUDK.Properties.Settings.Default.UDKConnectionString);
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[0])).CommandText = "SELECT        projects.*\r\nFROM            projects";
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlServerCe.SqlCeCommand();
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlServerCe.SqlCeConnection(global::VisualUDK.Properties.Settings.Default.UDKConnectionString);
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[1])).CommandText = "SELECT        value\r\nFROM            options\r\nWHERE        (setting = \'enginePath" +
+                "\')";
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1696,6 +1701,34 @@ namespace VisualUDK.UDKDataSetTableAdapters {
             }
             else {
                 return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string FetchEnginePath() {
+            global::System.Data.SqlServerCe.SqlCeCommand command = ((global::System.Data.SqlServerCe.SqlCeCommand)(this.CommandCollection[1]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
             }
         }
     }
