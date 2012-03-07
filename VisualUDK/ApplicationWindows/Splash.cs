@@ -23,7 +23,7 @@ namespace VisualUDK
 
         private void Splash_Load(object sender, EventArgs e)
         {
-
+            SplashBrowser.Url = new Uri( "http://www.google.com" );
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)

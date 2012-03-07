@@ -35,6 +35,8 @@
             this.Menu_File_RecentProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_File_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Tools_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help_CheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,8 +51,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SplashBrowser = new System.Windows.Forms.WebBrowser();
-            this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Tools_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -116,6 +116,21 @@
             this.Menu_File_Exit.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_Exit.Text = "Exit";
             this.Menu_File_Exit.Click += new System.EventHandler(this.Menu_File_Exit_Click);
+            // 
+            // Menu_Tools
+            // 
+            this.Menu_Tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Tools_Options});
+            this.Menu_Tools.Name = "Menu_Tools";
+            this.Menu_Tools.Size = new System.Drawing.Size(48, 20);
+            this.Menu_Tools.Text = "Tools";
+            // 
+            // Menu_Tools_Options
+            // 
+            this.Menu_Tools_Options.Name = "Menu_Tools_Options";
+            this.Menu_Tools_Options.Size = new System.Drawing.Size(116, 22);
+            this.Menu_Tools_Options.Text = "Options";
+            this.Menu_Tools_Options.Click += new System.EventHandler(this.Menu_Tools_Options_Click);
             // 
             // Menu_Help
             // 
@@ -251,22 +266,7 @@
             this.SplashBrowser.Name = "SplashBrowser";
             this.SplashBrowser.Size = new System.Drawing.Size(516, 335);
             this.SplashBrowser.TabIndex = 0;
-            this.SplashBrowser.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
-            // 
-            // Menu_Tools
-            // 
-            this.Menu_Tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_Tools_Options});
-            this.Menu_Tools.Name = "Menu_Tools";
-            this.Menu_Tools.Size = new System.Drawing.Size(48, 20);
-            this.Menu_Tools.Text = "Tools";
-            // 
-            // Menu_Tools_Options
-            // 
-            this.Menu_Tools_Options.Name = "Menu_Tools_Options";
-            this.Menu_Tools_Options.Size = new System.Drawing.Size(152, 22);
-            this.Menu_Tools_Options.Text = "Options";
-            this.Menu_Tools_Options.Click += new System.EventHandler(this.Menu_Tools_Options_Click);
+            this.SplashBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // Splash
             // 
