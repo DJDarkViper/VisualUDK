@@ -30,6 +30,10 @@
         {
             this.Menu_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_File_NewProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_File_OpenProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_File_RecentProjects = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_File_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help_About = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,10 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SplashBrowser = new System.Windows.Forms.WebBrowser();
-            this.Menu_File_NewProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_File_OpenProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_File_RecentProjects = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -79,6 +79,32 @@
             this.Menu_File.Size = new System.Drawing.Size(37, 20);
             this.Menu_File.Text = "File";
             // 
+            // Menu_File_NewProject
+            // 
+            this.Menu_File_NewProject.Name = "Menu_File_NewProject";
+            this.Menu_File_NewProject.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_NewProject.Text = "New Project";
+            this.Menu_File_NewProject.Click += new System.EventHandler(this.Menu_File_NewProject_Click);
+            // 
+            // Menu_File_OpenProject
+            // 
+            this.Menu_File_OpenProject.Name = "Menu_File_OpenProject";
+            this.Menu_File_OpenProject.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_OpenProject.Text = "Open Project";
+            this.Menu_File_OpenProject.Click += new System.EventHandler(this.Menu_File_OpenProject_Click);
+            // 
+            // Menu_File_RecentProjects
+            // 
+            this.Menu_File_RecentProjects.Name = "Menu_File_RecentProjects";
+            this.Menu_File_RecentProjects.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_RecentProjects.Text = "Recent Projects";
+            this.Menu_File_RecentProjects.Click += new System.EventHandler(this.Menu_File_RecentProjects_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            // 
             // Menu_File_Exit
             // 
             this.Menu_File_Exit.Name = "Menu_File_Exit";
@@ -97,7 +123,7 @@
             // Menu_Help_About
             // 
             this.Menu_Help_About.Name = "Menu_Help_About";
-            this.Menu_Help_About.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Help_About.Size = new System.Drawing.Size(107, 22);
             this.Menu_Help_About.Text = "About";
             this.Menu_Help_About.Click += new System.EventHandler(this.Menu_Help_About_Click);
             // 
@@ -129,6 +155,7 @@
             // But_NewProject
             // 
             this.But_NewProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.But_NewProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.But_NewProject.Location = new System.Drawing.Point(3, 3);
             this.But_NewProject.Name = "But_NewProject";
             this.But_NewProject.Size = new System.Drawing.Size(170, 37);
@@ -140,6 +167,7 @@
             // But_OpenProject
             // 
             this.But_OpenProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.But_OpenProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.But_OpenProject.Location = new System.Drawing.Point(3, 46);
             this.But_OpenProject.Name = "But_OpenProject";
             this.But_OpenProject.Size = new System.Drawing.Size(170, 37);
@@ -205,32 +233,6 @@
             this.SplashBrowser.Size = new System.Drawing.Size(516, 335);
             this.SplashBrowser.TabIndex = 0;
             this.SplashBrowser.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
-            // 
-            // Menu_File_NewProject
-            // 
-            this.Menu_File_NewProject.Name = "Menu_File_NewProject";
-            this.Menu_File_NewProject.Size = new System.Drawing.Size(155, 22);
-            this.Menu_File_NewProject.Text = "New Project";
-            this.Menu_File_NewProject.Click += new System.EventHandler(this.Menu_File_NewProject_Click);
-            // 
-            // Menu_File_OpenProject
-            // 
-            this.Menu_File_OpenProject.Name = "Menu_File_OpenProject";
-            this.Menu_File_OpenProject.Size = new System.Drawing.Size(155, 22);
-            this.Menu_File_OpenProject.Text = "Open Project";
-            this.Menu_File_OpenProject.Click += new System.EventHandler(this.Menu_File_OpenProject_Click);
-            // 
-            // Menu_File_RecentProjects
-            // 
-            this.Menu_File_RecentProjects.Name = "Menu_File_RecentProjects";
-            this.Menu_File_RecentProjects.Size = new System.Drawing.Size(155, 22);
-            this.Menu_File_RecentProjects.Text = "Recent Projects";
-            this.Menu_File_RecentProjects.Click += new System.EventHandler(this.Menu_File_RecentProjects_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
             // 
             // Splash
             // 
