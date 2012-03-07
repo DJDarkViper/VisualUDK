@@ -68,6 +68,12 @@
     <Compile Include="ApplicationWindows\Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\OpenProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\OpenProject.Designer.cs">
+      <DependentUpon>OpenProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Projects.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UDKDataSet.cs">
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="ApplicationWindows\Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\OpenProject.resx">
+      <DependentUpon>OpenProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\Options.resx">
       <DependentUpon>Options.cs</DependentUpon>

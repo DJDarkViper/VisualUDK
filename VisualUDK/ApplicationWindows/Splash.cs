@@ -33,7 +33,7 @@ namespace VisualUDK
 
         private void But_OpenProject_Click(object sender, EventArgs e)
         {
-
+            Projects.openProject();
         }
 
         private void Menu_File_NewProject_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace VisualUDK
 
         private void Menu_File_OpenProject_Click(object sender, EventArgs e)
         {
-
+            Projects.openProject();
         }
 
         private void Menu_File_RecentProjects_Click(object sender, EventArgs e)

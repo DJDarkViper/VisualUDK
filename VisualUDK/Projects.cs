@@ -16,24 +16,44 @@ namespace VisualUDK
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static projectsTableAdapter project = new projectsTableAdapter();
 
-        public static Boolean newProject()
+        public static Boolean checkEnginePath()
         {
             String enginePath = Settings.getEnginePath();
 
-            if (File.Exists(enginePath + "Engine/Config/BaseEngine.ini"))
-            {
+            if (File.Exists(enginePath + "Engine/Config/BaseEngine.ini")) return true;
+            else return false;
+        }
+
+        public static void newProject()
+        {
+            if(Projects.checkEnginePath()) {
+
                 NewProject np = new NewProject();
                 np.Show();
-
-                return true;
             }
             else
             {
                 MessageBox.Show("Engine Path has not been set correctly");
                 Options op = new Options();
                 op.Show();
+            }
+        }
 
-                return false;
+        /// <summary>
+        /// Open Project will open a window that scans for "mods" that are selectable
+        /// </summary>
+        public static void openProject()
+        {
+            if (Projects.checkEnginePath())
+            {
+                OpenProject op = new OpenProject();
+                op.Show();
+            }
+            else
+            {
+                MessageBox.Show("Engine Path has not been set correctly");
+                Options op = new Options();
+                op.Show();
             }
         }
     }
