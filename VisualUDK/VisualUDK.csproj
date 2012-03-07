@@ -68,6 +68,7 @@
     <Compile Include="ApplicationWindows\Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="Projects.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UDKDataSet.cs">
       <DependentUpon>UDKDataSet.xsd</DependentUpon>

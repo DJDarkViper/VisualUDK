@@ -28,17 +28,7 @@ namespace VisualUDK
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
-
-            String enginePath = Settings.getEnginePath();
-            
-            if(File.Exists(enginePath+"Engine/Config/BaseEngine.ini")) {
-                NewProject np = new NewProject();
-                np.Show();
-            } else {
-                MessageBox.Show("Engine Path has not been set correctly");
-                Options op = new Options();
-                op.Show();
-            }
+            Projects.newProject();
         }
 
         private void But_OpenProject_Click(object sender, EventArgs e)
@@ -48,7 +38,7 @@ namespace VisualUDK
 
         private void Menu_File_NewProject_Click(object sender, EventArgs e)
         {
-
+            Projects.newProject();
         }
 
         private void Menu_File_OpenProject_Click(object sender, EventArgs e)
