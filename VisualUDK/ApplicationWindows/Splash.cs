@@ -24,6 +24,17 @@ namespace VisualUDK
         private void Splash_Load(object sender, EventArgs e)
         {
             SplashBrowser.Url = new Uri( "http://www.google.com" );
+
+            ProjectList.View = View.Details;
+            ProjectList.FullRowSelect = true;
+            ProjectList.Sorting = SortOrder.Ascending;
+
+            ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
+
+            ListViewItem item1 = new ListViewItem("Sparticus Landing", 0);
+
+            ProjectList.Items.AddRange(new ListViewItem[] { item1 });
+
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)
