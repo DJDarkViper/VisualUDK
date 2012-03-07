@@ -243,6 +243,7 @@
             this.Menu_Help_CheckForUpdates.Name = "Menu_Help_CheckForUpdates";
             this.Menu_Help_CheckForUpdates.Size = new System.Drawing.Size(173, 22);
             this.Menu_Help_CheckForUpdates.Text = "Check For Updates";
+            this.Menu_Help_CheckForUpdates.Click += new System.EventHandler(this.Menu_Help_CheckForUpdates_Click);
             // 
             // toolStripSeparator2
             // 

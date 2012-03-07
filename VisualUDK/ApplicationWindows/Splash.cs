@@ -56,6 +56,11 @@ namespace VisualUDK
 
         }
 
+        private void Menu_Help_CheckForUpdates_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
