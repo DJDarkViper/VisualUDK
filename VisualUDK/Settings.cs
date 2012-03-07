@@ -21,8 +21,7 @@ namespace VisualUDK
 
         public static Boolean updateEnginePath(String path)
         {
-            //query.UpdateEnginePath(path);
-
+            query.UpdateEnginePath(path);
             return true;
         }
     }
