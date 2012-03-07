@@ -47,6 +47,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SplashBrowser = new System.Windows.Forms.WebBrowser();
+            this.Menu_Help_CheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -115,6 +117,8 @@
             // Menu_Help
             // 
             this.Menu_Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Help_CheckForUpdates,
+            this.toolStripSeparator2,
             this.Menu_Help_About});
             this.Menu_Help.Name = "Menu_Help";
             this.Menu_Help.Size = new System.Drawing.Size(44, 20);
@@ -123,7 +127,7 @@
             // Menu_Help_About
             // 
             this.Menu_Help_About.Name = "Menu_Help_About";
-            this.Menu_Help_About.Size = new System.Drawing.Size(107, 22);
+            this.Menu_Help_About.Size = new System.Drawing.Size(173, 22);
             this.Menu_Help_About.Text = "About";
             this.Menu_Help_About.Click += new System.EventHandler(this.Menu_Help_About_Click);
             // 
@@ -234,6 +238,17 @@
             this.SplashBrowser.TabIndex = 0;
             this.SplashBrowser.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
             // 
+            // Menu_Help_CheckForUpdates
+            // 
+            this.Menu_Help_CheckForUpdates.Name = "Menu_Help_CheckForUpdates";
+            this.Menu_Help_CheckForUpdates.Size = new System.Drawing.Size(173, 22);
+            this.Menu_Help_CheckForUpdates.Text = "Check For Updates";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
+            // 
             // Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +295,8 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_File_OpenProject;
         private System.Windows.Forms.ToolStripMenuItem Menu_File_RecentProjects;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Help_CheckForUpdates;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 
 
     }
