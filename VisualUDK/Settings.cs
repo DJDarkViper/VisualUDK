@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using VisualUDK.UDKDataSetTableAdapters;
 using System.Data.SqlClient;
-using System.Data;
+using System.IO;
 
 namespace VisualUDK
 {
@@ -14,6 +14,15 @@ namespace VisualUDK
         static UDKDataSet udkDataSet = new UDKDataSet();
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static optionsTableAdapter options = new optionsTableAdapter();
+
+        public static Boolean checkEnginePath()
+        {
+            String enginePath = Settings.getEnginePath();
+
+            if (File.Exists(enginePath + "Engine/Config/BaseEngine.ini")) return true;
+            else return false;
+        }
+
 
         public static String getEnginePath()
         {

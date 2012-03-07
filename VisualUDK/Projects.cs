@@ -26,7 +26,7 @@ namespace VisualUDK
 
         public static void newProject()
         {
-            if(Projects.checkEnginePath()) {
+            if(Settings.checkEnginePath()) {
 
                 NewProject np = new NewProject();
                 np.Show();
@@ -44,7 +44,7 @@ namespace VisualUDK
         /// </summary>
         public static void openProject()
         {
-            if (Projects.checkEnginePath())
+            if (Settings.checkEnginePath())
             {
                 OpenProject op = new OpenProject();
                 op.Show();
