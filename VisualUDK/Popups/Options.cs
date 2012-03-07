@@ -31,6 +31,12 @@ namespace VisualUDK.Popups
 
         }
 
+        private void But_Submit_Click(object sender, EventArgs e)
+        {
+            Settings.updateEnginePath(txt_EnginePath.Text.ToString());
+            this.Close();
+        }
+
         
     }
 }

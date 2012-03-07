@@ -1664,7 +1664,7 @@ namespace VisualUDK.UDKDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[2];
+            this._commandCollection = new global::System.Data.IDbCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlServerCe.SqlCeCommand();
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlServerCe.SqlCeConnection(global::VisualUDK.Properties.Settings.Default.UDKConnectionString);
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[0])).CommandText = "SELECT        projects.*\r\nFROM            projects";
@@ -1674,6 +1674,12 @@ namespace VisualUDK.UDKDataSetTableAdapters {
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[1])).CommandText = "SELECT        value\r\nFROM            options\r\nWHERE        (setting = \'enginePath" +
                 "\')";
             ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlServerCe.SqlCeCommand();
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlServerCe.SqlCeConnection(global::VisualUDK.Properties.Settings.Default.UDKConnectionString);
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[2])).CommandText = "UPDATE       options\r\nSET                value = path\r\nWHERE        setting=\'engi" +
+                "nePath\'";
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlServerCe.SqlCeCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, null, global::System.Data.DataRowVersion.Current, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1730,6 +1736,35 @@ namespace VisualUDK.UDKDataSetTableAdapters {
             else {
                 return ((string)(returnValue));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEnginePath(string path) {
+            global::System.Data.SqlServerCe.SqlCeCommand command = ((global::System.Data.SqlServerCe.SqlCeCommand)(this.CommandCollection[2]));
+            if ((path == null)) {
+                throw new global::System.ArgumentNullException("path");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(path));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

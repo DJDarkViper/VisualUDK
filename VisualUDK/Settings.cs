@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using VisualUDK.UDKDataSetTableAdapters;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace VisualUDK
 {
     class Settings
     {
+        static UDKDataSet udkDataSet = new UDKDataSet();
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static optionsTableAdapter options = new optionsTableAdapter();
 
@@ -19,16 +21,7 @@ namespace VisualUDK
 
         public static Boolean updateEnginePath(String path)
         {
-            SqlConnection con = new SqlConnection("Data Source=|DataDirectory|\\UDK.sdf");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "UPDATE options SET value='"+path+"' WHERE setting='enginePath'";
-            cmd.Connection = con;
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+            //query.UpdateEnginePath(path);
 
             return true;
         }

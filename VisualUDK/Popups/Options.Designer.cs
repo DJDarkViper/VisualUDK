@@ -63,6 +63,7 @@
             this.But_Submit.TabIndex = 0;
             this.But_Submit.Text = "Submit Changes";
             this.But_Submit.UseVisualStyleBackColor = true;
+            this.But_Submit.Click += new System.EventHandler(this.But_Submit_Click);
             // 
             // panel2
             // 
