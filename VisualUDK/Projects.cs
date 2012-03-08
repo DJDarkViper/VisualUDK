@@ -9,6 +9,8 @@ using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 using VisualUDK.Utilities;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 
 namespace VisualUDK
 {
@@ -65,25 +67,27 @@ namespace VisualUDK
         }
 
 
-        public static int? getProjects()
+        public static void getProjects()
         {
-            /*
-            List<String> projects = new List<string>();
-            int index = 0;
-            using (StreamReader sr = File.OpenText(FileMan.getEngineIni())) {
-                String l = "";
-                while ((l = sr.ReadLine()) != null)
+            using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
+            {
+                MessageBox.Show("test");
+                con.Open();
+                using(SqlCeCommand com = new SqlCeCommand("SELECT id,name,path FROM projects", con))
                 {
-                    Match match = Regex.Match(l, "(\\+EditPackages)");
-                    if(match.Success) 
+                    String items = "";
+                    SqlCeDataReader reader = com.ExecuteReader();
+                    while (reader.Read())
                     {
-                        index++;
-                        projects.Add( new Regex("\\+EditPackages=").Replace(l, "") );
+                        items += reader.GetString(0) + "|" + reader.GetString(1) + "|" + reader.GetString(2)+"\n";
+                        //projects.Add(new String[] { reader.GetString(0), reader.GetString(1), reader.GetString(2) });
                     }
+                    MessageBox.Show("Projects: \n"+items);
+                    //return projects;
                 }
             }
-             */
-            return query.GetProjects();
+            
+            
         }
     }
 }

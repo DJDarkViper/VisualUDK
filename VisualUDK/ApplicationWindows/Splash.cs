@@ -31,15 +31,26 @@ namespace VisualUDK
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            List<int> projects = new List<int>();
+            Projects.getProjects();
+            //List<String[]> allProjects = new List<String[]>( Projects.getProjects() );
 
-            
+            //MessageBox.Show(allProjects.ToString());
+
+            /*
+            projects.ForEach(delegate(String[] project)
+            {
+                MessageBox.Show("Test: ");
+                ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem("Stuff", 0) });
+            });
+             */
+
+            /*
             ListViewItem item1 = new ListViewItem("Sparticus Landing", 0);
             ProjectList.Items.AddRange(new ListViewItem[] { item1 });
 
             ListViewItem item2 = new ListViewItem("Sparticus Landing", 0);
             ProjectList.Items.AddRange(new ListViewItem[] { item2 });
-
+            */
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)
