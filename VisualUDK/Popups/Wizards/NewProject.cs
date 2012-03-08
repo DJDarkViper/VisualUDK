@@ -43,7 +43,45 @@ namespace VisualUDK.Popups.Wizards
                     if (isAttemptToConfigure.CheckState.ToString() == "Checked")
                     {
 
+                        String parsed = "";
+
+                        using (StreamReader sr = File.OpenText(FileMan.getEngineIni()))
+                        {
+                            Boolean grab = false;
+                            String l = "";
+                            
+                            while ((l = sr.ReadLine()) != null)
+                            {
+                                if (l == "[UnrealEd.EditorEngine]")
+                                {
+                                    parsed += l + "\n";
+                                    grab = true;
+                                }
+
+                                if (grab == true)
+                                {
+                                    Match match = Regex.Match(l, "(\\+EditPackages)");
+
+                                    if (match.Success)
+                                    {
+                                        parsed += l+"\n";
+                                    }
+                                }
+
+                                if (grab == true && l == "")
+                                {
+                                    parsed += "+EditPackages=" + systemName.Text.ToString().Trim()+"\n";
+
+                                    grab = false;
+                                }
+                            }
+                            MessageBox.Show(parsed);
+                        }
+                        
+                        
+                        
                         p.increment(20);
+
 
                     }
 
@@ -63,6 +101,7 @@ namespace VisualUDK.Popups.Wizards
 
                     p.finish();
                     p.Close();
+                    this.Close();
                 }
                 else
                 {

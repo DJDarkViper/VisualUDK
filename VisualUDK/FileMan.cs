@@ -22,15 +22,7 @@ namespace VisualUDK
 
         public static String getEngineIni()
         {
-            if (FileMan.checkEnginePath())
-            {
-                return FileMan.getGame()+"Config/DefaultEngine.ini";
-            }
-            else
-            {
-                MessageBox.Show("Engine path not found");
-                return "";
-            }
+            return FileMan.getGame()+"Config/DefaultEngine.ini";
         }
 
 
