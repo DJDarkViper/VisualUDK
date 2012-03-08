@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 using VisualUDK.Utilities;
+using System.Text.RegularExpressions;
 
 namespace VisualUDK
 {
@@ -61,6 +62,28 @@ namespace VisualUDK
                 Options op = new Options();
                 op.Show();
             }
+        }
+
+
+        public static int? getProjects()
+        {
+            /*
+            List<String> projects = new List<string>();
+            int index = 0;
+            using (StreamReader sr = File.OpenText(FileMan.getEngineIni())) {
+                String l = "";
+                while ((l = sr.ReadLine()) != null)
+                {
+                    Match match = Regex.Match(l, "(\\+EditPackages)");
+                    if(match.Success) 
+                    {
+                        index++;
+                        projects.Add( new Regex("\\+EditPackages=").Replace(l, "") );
+                    }
+                }
+            }
+             */
+            return query.GetProjects();
         }
     }
 }

@@ -31,9 +31,14 @@ namespace VisualUDK
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            ListViewItem item1 = new ListViewItem("Sparticus Landing", 0);
+            List<int> projects = new List<int>();
 
+            
+            ListViewItem item1 = new ListViewItem("Sparticus Landing", 0);
             ProjectList.Items.AddRange(new ListViewItem[] { item1 });
+
+            ListViewItem item2 = new ListViewItem("Sparticus Landing", 0);
+            ProjectList.Items.AddRange(new ListViewItem[] { item2 });
 
         }
 
