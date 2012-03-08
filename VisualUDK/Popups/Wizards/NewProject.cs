@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using VisualUDK.Utilities;
+using System.IO;
 
 namespace VisualUDK.Popups.Wizards
 {
@@ -19,9 +21,62 @@ namespace VisualUDK.Popups.Wizards
 
         private void but_CreateProject_Click(object sender, EventArgs e)
         {
+            but_CreateProject.Enabled = false;
+            but_CreateProject.Text = "Please Wait..";
+
+            Progress p = new Progress();
+            p.Show();
+            p.set(10);
+
             if (ValidateNewProject())
             {
+                p.set(20);
+                if (Projects.createNewProject(projectName.Text.ToString().Trim(), systemName.Text.ToString().Trim()) == 1)
+                {
+                    p.set(30);
 
+                    Directory.CreateDirectory(FileMan.getSrc() + systemName.Text.ToString().Trim());
+                    Directory.CreateDirectory(FileMan.getSrc() + systemName.Text.ToString().Trim() + "/Classes");
+
+                    p.set(50);
+
+                    if (isAttemptToConfigure.CheckState.ToString() == "Checked")
+                    {
+
+                        p.increment(20);
+
+                    }
+
+                    if (isCreateClass.CheckState.ToString() == "Checked")
+                    {
+                        String filePath = FileMan.getSrc() + systemName.Text.ToString().Trim() + "/Classes/" + className.Text.ToString().Trim() + ".uc";
+                        using (StreamWriter sw = File.CreateText(filePath))
+                        {
+                            sw.WriteLine("class " + className.Text.ToString().Trim() + ((classInherits.Text.ToString().Trim() != "") ? " extends " + classInherits.Text.ToString().Trim() : "") + ";");
+                            sw.WriteLine(" ");
+                        }
+
+
+                        p.increment(20);
+                        
+                    }
+
+                    p.finish();
+                    p.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Could not create project correctly at this time...");
+                    p.finish();
+                    p.Close();
+                }
+            }
+            else
+            {
+                p.finish();
+                p.Close();
+                but_CreateProject.Text = "Create Project";
+                but_CreateProject.Enabled = true;
             }
         }
 

@@ -18,7 +18,7 @@ namespace VisualUDK.Popups
 
         private void Options_Load(object sender, EventArgs e)
         {
-            txt_EnginePath.Text = Settings.getEnginePath();
+            txt_EnginePath.Text = FileMan.getEnginePath();
         }
 
         private void But_EngineBrowse_Click(object sender, EventArgs e)

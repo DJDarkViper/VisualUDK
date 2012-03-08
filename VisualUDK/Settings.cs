@@ -15,26 +15,12 @@ namespace VisualUDK
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static optionsTableAdapter options = new optionsTableAdapter();
 
-        public static Boolean checkEnginePath()
-        {
-            String enginePath = Settings.getEnginePath();
-
-            if (File.Exists(enginePath + "Engine/Config/BaseEngine.ini")) return true;
-            else return false;
-        }
-
-
-        public static String getEnginePath()
-        {
-            return query.FetchEnginePath();
-        }
-
         public static Boolean updateEnginePath(String path)
         {
             try
             {
                 query.UpdateEnginePath(path); // attempt query
-                if (Settings.getEnginePath() == path)
+                if (FileMan.getEnginePath() == path)
                     return true;
                 else return false;
             }

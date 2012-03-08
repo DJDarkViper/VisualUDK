@@ -68,6 +68,7 @@
     <Compile Include="ApplicationWindows\Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileMan.cs" />
     <Compile Include="Popups\OpenProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,12 @@
     <Compile Include="ApplicationWindows\Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ApplicationWindows\Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="ApplicationWindows\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="UDKDataSet.xsc">

@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
+using VisualUDK.Utilities;
 
 namespace VisualUDK
 {
@@ -16,17 +17,11 @@ namespace VisualUDK
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static projectsTableAdapter project = new projectsTableAdapter();
 
-        public static Boolean checkEnginePath()
-        {
-            String enginePath = Settings.getEnginePath();
-
-            if (File.Exists(enginePath + "Engine/Config/BaseEngine.ini")) return true;
-            else return false;
-        }
+        
 
         public static void newProject()
         {
-            if(Settings.checkEnginePath()) {
+            if(FileMan.checkEnginePath()) {
 
                 NewProject np = new NewProject();
                 np.Show();
@@ -40,11 +35,22 @@ namespace VisualUDK
         }
 
         /// <summary>
+        /// Inserts a new Project into the database, returns new ID i think..
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static int createNewProject(String name, String path)
+        {
+            return query.CreateNewProject(name, path);
+        }
+
+        /// <summary>
         /// Open Project will open a window that scans for "mods" that are selectable
         /// </summary>
         public static void openProject()
         {
-            if (Settings.checkEnginePath())
+            if (FileMan.checkEnginePath())
             {
                 OpenProject op = new OpenProject();
                 op.Show();
