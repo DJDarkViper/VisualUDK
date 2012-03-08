@@ -43,7 +43,7 @@ namespace VisualUDK.Popups.Wizards
                     if (isAttemptToConfigure.CheckState.ToString() == "Checked")
                     {
 
-                        String parsed = "";
+                        String lines = "";
 
                         using (StreamReader sr = File.OpenText(FileMan.getEngineIni()))
                         {
@@ -52,9 +52,10 @@ namespace VisualUDK.Popups.Wizards
                             
                             while ((l = sr.ReadLine()) != null)
                             {
+                                
+
                                 if (l == "[UnrealEd.EditorEngine]")
                                 {
-                                    parsed += l + "\n";
                                     grab = true;
                                 }
 
@@ -64,18 +65,31 @@ namespace VisualUDK.Popups.Wizards
 
                                     if (match.Success)
                                     {
-                                        parsed += l+"\n";
+                                        //parsed += l+"\n";
                                     }
                                 }
 
                                 if (grab == true && l == "")
                                 {
-                                    parsed += "+EditPackages=" + systemName.Text.ToString().Trim()+"\n";
+                                    //parsed += "+EditPackages=" + systemName.Text.ToString().Trim()+"\n\n";
+                                    lines += "+EditPackages=" + systemName.Text.ToString().Trim() + "\n\n";
 
                                     grab = false;
                                 }
+                                else
+                                {
+                                    lines += l + "\n";
+                                }
+
+                                
                             }
-                            MessageBox.Show(parsed);
+
+
+                            sr.Close();
+
+                            File.Copy(FileMan.getEngineIni(), FileMan.getEngineIni() + ".bak."+DateTime.Now.ToString("M-d-yyyy"));
+                            File.WriteAllText(FileMan.getEngineIni(), lines);
+
                         }
                         
                         
