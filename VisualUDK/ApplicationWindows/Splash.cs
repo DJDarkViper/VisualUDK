@@ -31,26 +31,14 @@ namespace VisualUDK
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            Projects.getProjects();
-            //List<String[]> allProjects = new List<String[]>( Projects.getProjects() );
+            List<String[]> projects = new List<String[]>(Projects.getProjects());
 
-            //MessageBox.Show(allProjects.ToString());
-
-            /*
-            projects.ForEach(delegate(String[] project)
+            foreach (String[] project in projects)
             {
-                MessageBox.Show("Test: ");
-                ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem("Stuff", 0) });
-            });
-             */
+                ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
+            }
 
-            /*
-            ListViewItem item1 = new ListViewItem("Sparticus Landing", 0);
-            ProjectList.Items.AddRange(new ListViewItem[] { item1 });
 
-            ListViewItem item2 = new ListViewItem("Sparticus Landing", 0);
-            ProjectList.Items.AddRange(new ListViewItem[] { item2 });
-            */
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)
@@ -99,6 +87,16 @@ namespace VisualUDK
             op.Show();
         }
 
-        
+        private void ProjectList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ProjectList_DoubleClick(object sender, EventArgs e)
+        {
+            String item = ProjectList.SelectedItems[0].Text;
+            MessageBox.Show(item);
+        }
+ 
     }
 }

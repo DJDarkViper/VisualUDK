@@ -228,6 +228,8 @@
             this.ProjectList.Size = new System.Drawing.Size(176, 140);
             this.ProjectList.TabIndex = 1;
             this.ProjectList.UseCompatibleStateImageBehavior = false;
+            this.ProjectList.SelectedIndexChanged += new System.EventHandler(this.ProjectList_SelectedIndexChanged);
+            this.ProjectList.DoubleClick += new System.EventHandler(this.ProjectList_DoubleClick);
             // 
             // panel4
             // 

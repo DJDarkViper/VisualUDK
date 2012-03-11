@@ -67,23 +67,24 @@ namespace VisualUDK
         }
 
 
-        public static void getProjects()
+        public static List<String[]> getProjects()
         {
+            List<String[]> items = new List<String[]>();
             using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
             {
-                MessageBox.Show("test");
                 con.Open();
                 using(SqlCeCommand com = new SqlCeCommand("SELECT id,name,path FROM projects", con))
                 {
-                    String items = "";
+                    
                     SqlCeDataReader reader = com.ExecuteReader();
                     while (reader.Read())
                     {
-                        items += reader.GetString(0) + "|" + reader.GetString(1) + "|" + reader.GetString(2)+"\n";
-                        //projects.Add(new String[] { reader.GetString(0), reader.GetString(1), reader.GetString(2) });
+                        items.Add(
+                            new String[3] { reader.GetInt32(0).ToString(), reader.GetString(1), reader.GetString(2) }
+                        );
                     }
-                    MessageBox.Show("Projects: \n"+items);
-                    //return projects;
+
+                    return items;
                 }
             }
             
