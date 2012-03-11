@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using VisualUDK.Utilities;
-using VisualUDK.Models;
 using System.IO;
 
 namespace VisualUDK.Popups.Wizards
@@ -31,11 +30,14 @@ namespace VisualUDK.Popups.Wizards
 
             if (ValidateNewProject())
             {
-                /*
+                
                 p.set(20);
 
+                Project np = new Project();
+                np.setName(projectName.Text);
+                np.setPath(systemName.Text);
 
-                if (Projects.createNewProject(projectName.Text.ToString().Trim(), systemName.Text.ToString().Trim()) == 1)
+                if (np.save())
                 {
                     p.set(30);
 
@@ -128,7 +130,7 @@ namespace VisualUDK.Popups.Wizards
                     p.finish();
                     p.Close();
                 }
-                 * * */
+                 
             }
             else
             {

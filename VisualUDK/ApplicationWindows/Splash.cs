@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 using VisualUDK.UDKDataSetTableAdapters;
-using VisualUDK.Models;
 
 namespace VisualUDK
 {

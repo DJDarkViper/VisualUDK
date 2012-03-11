@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace VisualUDK
 {
-    public partial class Project : Form
+    public partial class ProjectEditor : Form
     {
-        public Project()
+        public ProjectEditor()
         {
             InitializeComponent();
         }
