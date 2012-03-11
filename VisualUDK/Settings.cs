@@ -26,7 +26,7 @@ namespace VisualUDK
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Could not update engine path at this time, please try again");
+                MessageBox.Show("Could not update engine path at this time, please try again:\n"+e.ToString());
                 return false;
             }
         }
