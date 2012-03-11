@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Data.SqlServerCe;
 
-namespace VisualUDK
+namespace VisualUDK.Models
 {
     class Projects
     {

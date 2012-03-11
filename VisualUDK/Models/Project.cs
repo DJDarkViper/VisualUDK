@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data.SqlServerCe;
 using VisualUDK.UDKDataSetTableAdapters;
 
-namespace VisualUDK.Classes
+namespace VisualUDK.Models
 {
     class Project
     {

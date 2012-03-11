@@ -7,10 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using VisualUDK.Classes;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 using VisualUDK.UDKDataSetTableAdapters;
+using VisualUDK.Models;
 
 namespace VisualUDK
 {
@@ -39,7 +39,7 @@ namespace VisualUDK
                 ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
             }
 
-            int num = VisualUDK.Classes.Project.TotalProjects();
+            int num = VisualUDK.Models.Project.TotalProjects();
 
         }
 

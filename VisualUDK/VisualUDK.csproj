@@ -77,7 +77,7 @@
     </Compile>
     <Compile Include="Models\Projects.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Classes\Project.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="UDKDataSet.cs">
       <DependentUpon>UDKDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -199,7 +199,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
