@@ -50,7 +50,7 @@ namespace VisualUDK
             if (getID() == -1)
             {
                 // new
-                command = "INSERT INTO projects (name, path) VALUES ("+getName()+","+getPath()+")";
+                command = "INSERT INTO projects (name, path) VALUES ('"+getName()+"','"+getPath()+"')";
             }
             else
             {
@@ -61,7 +61,7 @@ namespace VisualUDK
             using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
             {
                 con.Open();
-                using (SqlCeCommand com = new SqlCeCommand(command))
+                using (SqlCeCommand com = new SqlCeCommand(command, con))
                 {
                     if (com.ExecuteNonQuery() > 0)
                     {
