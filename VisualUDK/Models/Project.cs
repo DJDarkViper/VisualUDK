@@ -12,13 +12,13 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Data.SqlServerCe;
 
-namespace VisualUDK.Models
+namespace VisualUDK
 {
     class Project
     {
-        private int ID;
-        private String Name;
-        private String SystemPath;
+        private int ID              = -1;
+        private String Name         = null;
+        private String SystemPath   = null;
 
         public void setID(int ID) { this.ID = ID; }
         public void setName(String Name) { this.Name = Name.ToString().Trim(); }
@@ -44,9 +44,32 @@ namespace VisualUDK.Models
 
         }
 
-        public void save()
+        public Boolean save()
         {
-
+            String command = "";
+            if (getID() == -1)
+            {
+                // new
+                command = "INSERT INTO projects (name, path) VALUES ("+getName()+","+getPath()+")";
+            }
+            else
+            {
+                // update
+                command = "UPDATE projects SET name='" + getName() + "', path='" + getPath() + "' WHERE id='" + getID() + "'";
+            }
+            
+            using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
+            {
+                con.Open();
+                using (SqlCeCommand com = new SqlCeCommand(command))
+                {
+                    if (com.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
         }
 
 
