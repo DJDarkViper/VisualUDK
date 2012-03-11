@@ -31,8 +31,8 @@ namespace VisualUDK.Popups.Wizards
 
             if (ValidateNewProject())
             {
+                /*
                 p.set(20);
-
 
 
                 if (Projects.createNewProject(projectName.Text.ToString().Trim(), systemName.Text.ToString().Trim()) == 1)
@@ -120,6 +120,7 @@ namespace VisualUDK.Popups.Wizards
                     p.finish();
                     p.Close();
                     this.Close();
+                 
                 }
                 else
                 {
@@ -127,6 +128,7 @@ namespace VisualUDK.Popups.Wizards
                     p.finish();
                     p.Close();
                 }
+                 * * */
             }
             else
             {
@@ -135,6 +137,7 @@ namespace VisualUDK.Popups.Wizards
                 but_CreateProject.Text = "Create Project";
                 but_CreateProject.Enabled = true;
             }
+
         }
 
         private void projectName_TextChanged(object sender, EventArgs e)

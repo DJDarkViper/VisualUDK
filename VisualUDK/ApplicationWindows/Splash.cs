@@ -32,35 +32,35 @@ namespace VisualUDK
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            List<String[]> projects = new List<String[]>(Projects.getProjects());
+            List<String[]> projects = new List<String[]>();
 
             foreach (String[] project in projects)
             {
                 ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
             }
 
-            int num = VisualUDK.Models.Project.TotalProjects();
+            //int num = Project.totalProjects();
 
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
-            Projects.newProject();
+            
         }
 
         private void But_OpenProject_Click(object sender, EventArgs e)
         {
-            Projects.openNewProject();
+            
         }
 
         private void Menu_File_NewProject_Click(object sender, EventArgs e)
         {
-            Projects.newProject();
+            
         }
 
         private void Menu_File_OpenProject_Click(object sender, EventArgs e)
         {
-            Projects.openNewProject();
+            
         }
 
         private void Menu_File_RecentProjects_Click(object sender, EventArgs e)
