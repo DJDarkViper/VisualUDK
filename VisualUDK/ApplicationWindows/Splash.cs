@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VisualUDK.Classes;
 using VisualUDK.Popups;
 using VisualUDK.Popups.Wizards;
 using VisualUDK.UDKDataSetTableAdapters;
@@ -38,6 +39,7 @@ namespace VisualUDK
                 ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
             }
 
+            int num = VisualUDK.Classes.Project.TotalProjects();
 
         }
 
@@ -48,7 +50,7 @@ namespace VisualUDK
 
         private void But_OpenProject_Click(object sender, EventArgs e)
         {
-            Projects.openProject();
+            Projects.openNewProject();
         }
 
         private void Menu_File_NewProject_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace VisualUDK
 
         private void Menu_File_OpenProject_Click(object sender, EventArgs e)
         {
-            Projects.openProject();
+            Projects.openNewProject();
         }
 
         private void Menu_File_RecentProjects_Click(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace VisualUDK
         private void ProjectList_DoubleClick(object sender, EventArgs e)
         {
             String item = ProjectList.SelectedItems[0].Text;
-            MessageBox.Show(item);
+            //String[] project = Projects.getProjectByName(item);
         }
  
     }

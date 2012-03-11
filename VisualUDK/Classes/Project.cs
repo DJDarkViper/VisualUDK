@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data.SqlServerCe;
+using VisualUDK.UDKDataSetTableAdapters;
 
 namespace VisualUDK.Classes
 {
@@ -32,6 +35,27 @@ namespace VisualUDK.Classes
 
 
         /** Static Getters **/
+        public static int TotalProjects()
+        {
+            int total = 0;
+            using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
+            {
+                con.Open();
+                using(SqlCeCommand com = new SqlCeCommand("SELECT COUNT(*) FROM projects", con))
+                {
+                    
+                    SqlCeDataReader reader = com.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        total = reader.GetInt32(0);
+                    }
 
+                }
+                con.Close();
+                return total;
+            }
+            
+            
+        }
     }
 }

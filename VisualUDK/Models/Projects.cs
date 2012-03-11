@@ -37,6 +37,11 @@ namespace VisualUDK
             }
         }
 
+        public static void openProject(String path)
+        {
+
+        }
+
         /// <summary>
         /// Inserts a new Project into the database, returns new ID i think..
         /// </summary>
@@ -51,7 +56,7 @@ namespace VisualUDK
         /// <summary>
         /// Open Project will open a window that scans for "mods" that are selectable
         /// </summary>
-        public static void openProject()
+        public static void openNewProject()
         {
             if (FileMan.checkEnginePath())
             {
@@ -66,7 +71,7 @@ namespace VisualUDK
             }
         }
 
-
+        
         public static List<String[]> getProjects()
         {
             List<String[]> items = new List<String[]>();
