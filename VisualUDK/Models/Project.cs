@@ -20,6 +20,20 @@ namespace VisualUDK
         private String Name         = null;
         private String SystemPath   = null;
 
+        public Project()
+        {
+        }
+
+        public Project(int id = -1)
+        {
+            if (id != -1) fetchByID(id);
+        }
+
+        public Project(String name = "")
+        {
+            if (name != "") fetchByName(name);
+        }
+
         public void setID(int ID) { this.ID = ID; }
         public void setName(String Name) { this.Name = Name.ToString().Trim(); }
         public void setPath(String Path) { this.SystemPath = Path.ToString().Trim(); }
