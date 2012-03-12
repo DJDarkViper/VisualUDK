@@ -575,7 +575,7 @@
             this.Window_Errors.Location = new System.Drawing.Point(4, 22);
             this.Window_Errors.Name = "Window_Errors";
             this.Window_Errors.Padding = new System.Windows.Forms.Padding(3);
-            this.Window_Errors.Size = new System.Drawing.Size(638, 72);
+            this.Window_Errors.Size = new System.Drawing.Size(739, 93);
             this.Window_Errors.TabIndex = 1;
             this.Window_Errors.Text = "Errors";
             this.Window_Errors.UseVisualStyleBackColor = true;
@@ -587,6 +587,7 @@
             this.ProjectBrowser.Name = "ProjectBrowser";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
+            this.ProjectBrowser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProjectBrowser_MouseClick);
             // 
             // ProjectEditor
             // 

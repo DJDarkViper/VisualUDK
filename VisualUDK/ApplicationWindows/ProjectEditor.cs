@@ -38,14 +38,17 @@ namespace VisualUDK
             {
                 Trace.WriteLine("Dir: " + dir);
 
-                ProjectBrowser.Nodes.Add(new TreeNode(dir));
+                List<TreeNode> files = new List<TreeNode>();
 
                 Trace.Indent();
                 foreach (String file in Directory.GetFiles(dir))
                 {
                     Trace.WriteLine(file);
+                    files.Add(new TreeNode(file));
                 }
                 Trace.Unindent();
+
+                ProjectBrowser.Nodes.Add( new TreeNode(dir, files.ToArray()) );
             }
 
             
@@ -56,6 +59,15 @@ namespace VisualUDK
         private void ProjectEditor_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void ProjectBrowser_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                TreeNode selectedNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
+                MessageBox.Show(selectedNode.Text);
+            }
         }
     }
 }
