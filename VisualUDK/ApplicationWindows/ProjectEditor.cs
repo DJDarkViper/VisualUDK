@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
-using System.Drawing;
+using VisualUDK.Popups.Wizards;
 
 namespace VisualUDK
 {
@@ -18,6 +18,9 @@ namespace VisualUDK
         Project project;
         String Src;
 
+
+        // ActiveTreeNode
+        TreeNode activeTreeNode;
 
         public ProjectEditor(int id)
         {
@@ -45,6 +48,7 @@ namespace VisualUDK
 
         private void PopulateProjectBrowser()
         {
+            ProjectBrowser.Nodes.Clear();
             foreach (String dir in Directory.GetDirectories(Src))
             {
                 Trace.WriteLine("Dir: " + dir);
@@ -61,13 +65,15 @@ namespace VisualUDK
 
                 ProjectBrowser.Nodes.Add(new TreeNode(dir, files.ToArray()));
             }
+
+            ProjectBrowser.ExpandAll();
         }
 
         private void ProjectBrowser_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                TreeNode selectedNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
+                activeTreeNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
                 //MessageBox.Show(selectedNode.Text);
                 ContextMenu treeMenu = new ContextMenu();
                 
@@ -92,7 +98,15 @@ namespace VisualUDK
 
         void newFile_Click(object sender, EventArgs e)
         {
-            
+            NewFile nf = new NewFile(activeTreeNode.Text);
+            nf.ShowDialog();
+
+            PopulateProjectBrowser();
+        }
+
+        private void refresh_Tick(object sender, EventArgs e)
+        {
+            //PopulateProjectBrowser();
         }
     }
 }
