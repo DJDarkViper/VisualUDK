@@ -96,8 +96,7 @@ namespace VisualUDK
         {
             String item = ProjectList.SelectedItems[0].Text;
             Project project = new Project(item);
-            MessageBox.Show( project.getPath() );
-            //String[] project = Projects.getProjectByName(item);
+            project.open();
             
         }
  
