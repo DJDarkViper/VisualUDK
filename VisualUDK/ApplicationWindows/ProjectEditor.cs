@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace VisualUDK
 {
@@ -32,8 +33,18 @@ namespace VisualUDK
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
 
+            PopulateProjectBrowser();
             
             
+        }
+
+        private void ProjectEditor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void PopulateProjectBrowser()
+        {
             foreach (String dir in Directory.GetDirectories(Src))
             {
                 Trace.WriteLine("Dir: " + dir);
@@ -48,17 +59,8 @@ namespace VisualUDK
                 }
                 Trace.Unindent();
 
-                ProjectBrowser.Nodes.Add( new TreeNode(dir, files.ToArray()) );
+                ProjectBrowser.Nodes.Add(new TreeNode(dir, files.ToArray()));
             }
-
-            
-            
-
-        }
-
-        private void ProjectEditor_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
 
         private void ProjectBrowser_MouseClick(object sender, MouseEventArgs e)
@@ -66,8 +68,31 @@ namespace VisualUDK
             if (e.Button == MouseButtons.Right)
             {
                 TreeNode selectedNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
-                MessageBox.Show(selectedNode.Text);
+                //MessageBox.Show(selectedNode.Text);
+                ContextMenu treeMenu = new ContextMenu();
+                
+                MenuItem newFile = new MenuItem();
+                newFile.Text = "&New Class";
+                newFile.Click += new EventHandler(newFile_Click);
+                treeMenu.MenuItems.Add(newFile);
+                MenuItem openFile = new MenuItem();
+                openFile.Text = "&Open Class";
+                openFile.Click += new EventHandler(openFile_Click);
+                treeMenu.MenuItems.Add(openFile);
+
+                treeMenu.Show(ProjectBrowser, new Point(e.X, e.Y));
+                
             }
+        }
+
+        void openFile_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void newFile_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
