@@ -62,9 +62,15 @@ namespace VisualUDK
         public void fetchByName(String name)
         { fetch( "SELECT id,name,path FROM projects WHERE ( name = '"+name+"' )" ); }
 
-        public void open()
+        public Boolean open()
         {
-
+            if (getID() != -1)
+            {
+                ProjectEditor pe = new ProjectEditor(getID());
+                pe.Show();
+                return true;
+            }
+            else return false;
         }
 
         public Boolean save()

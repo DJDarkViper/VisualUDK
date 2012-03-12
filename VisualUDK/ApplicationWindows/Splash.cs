@@ -37,7 +37,6 @@ namespace VisualUDK
             {
                 ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
             }
-
             
         }
 
@@ -96,7 +95,14 @@ namespace VisualUDK
         {
             String item = ProjectList.SelectedItems[0].Text;
             Project project = new Project(item);
-            project.open();
+            if (project.open())
+            {
+                //this.Hide(); // figure this one out later
+            }
+            else
+            {
+                MessageBox.Show( "Could not open project" );
+            }
             
         }
  
