@@ -31,7 +31,7 @@ namespace VisualUDK
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            List<String[]> projects = new List<String[]>();
+            List<String[]> projects = new List<String[]>( Project.getProjects() );
 
             foreach (String[] project in projects)
             {
@@ -95,7 +95,10 @@ namespace VisualUDK
         private void ProjectList_DoubleClick(object sender, EventArgs e)
         {
             String item = ProjectList.SelectedItems[0].Text;
+            Project project = new Project(item);
+            MessageBox.Show( project.getPath() );
             //String[] project = Projects.getProjectByName(item);
+            
         }
  
     }

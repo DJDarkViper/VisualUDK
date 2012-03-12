@@ -20,9 +20,7 @@ namespace VisualUDK
         private String Name         = null;
         private String SystemPath   = null;
 
-        public Project()
-        {
-        }
+        public Project() {}
 
         public Project(int id = -1)
         {
@@ -42,18 +40,29 @@ namespace VisualUDK
         public String getName() { return this.Name; }
         public String getPath() { return this.SystemPath; }
 
+        private void fetch(String command)
+        {
+            using (SqlCeConnection con = new SqlCeConnection(Properties.Settings.Default.UDKConnectionString))
+            {
+                con.Open();
+                using (SqlCeCommand com = new SqlCeCommand(command, con))
+                {
+                    SqlCeDataReader reader = com.ExecuteReader();
+                    reader.Read();
+                    setID(reader.GetInt32(0));
+                    setName(reader.GetString(1));
+                    setPath(reader.GetString(2));
+                }
+            }
+        }
 
         public void fetchByID(int id)
-        {
-            
-        }
+        { fetch( "SELECT id,name,path FROM projects WHERE ( id = '"+id+"' )" ); }
 
         public void fetchByName(String name)
-        {
+        { fetch( "SELECT id,name,path FROM projects WHERE ( name = '"+name+"' )" ); }
 
-        }
-
-        public void openProject()
+        public void open()
         {
 
         }
