@@ -49,7 +49,11 @@ namespace VisualUDK
 
         private void ProjectBrowser_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
+            {
+                activeTreeNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
+            }
+            else if (e.Button == MouseButtons.Right)
             {
                 activeTreeNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
                 //MessageBox.Show(selectedNode.Text);
@@ -60,8 +64,12 @@ namespace VisualUDK
                 newFile.Click += new EventHandler(newFile_Click);
                 
                 MenuItem openFile = new MenuItem();
-                openFile.Text = "&Open Class";
+                openFile.Text = "&Open File";
                 openFile.Click += new EventHandler(openFile_Click);
+
+                MenuItem deleteFile = new MenuItem();
+                deleteFile.Text = "&Delete File";
+                deleteFile.Click += new EventHandler(deleteFile_Click);
                 
                 MenuItem refreshFiles = new MenuItem();
                 refreshFiles.Text = "&Refresh";
@@ -69,6 +77,7 @@ namespace VisualUDK
 
 
                 treeMenu.MenuItems.Add(newFile);
+                
                 treeMenu.MenuItems.Add(openFile);
                 treeMenu.MenuItems.Add("-");
                 treeMenu.MenuItems.Add(refreshFiles);
@@ -77,6 +86,11 @@ namespace VisualUDK
                 treeMenu.Show(ProjectBrowser, new Point(e.X, e.Y));
                 
             }
+        }
+
+        void deleteFile_Click(object sender, EventArgs e)
+        {
+            
         }
 
         void refreshFiles_Click(object sender, EventArgs e)
@@ -126,6 +140,11 @@ namespace VisualUDK
             }
 
             ProjectBrowser.ExpandAll();
+        }
+
+        private void ProjectBrowser_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(activeTreeNode.Text);
         }
     }
 }

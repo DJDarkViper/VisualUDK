@@ -605,6 +605,7 @@
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
             this.ProjectBrowser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProjectBrowser_MouseClick);
+            this.ProjectBrowser.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ProjectBrowser_MouseDoubleClick);
             // 
             // refresh
             // 
