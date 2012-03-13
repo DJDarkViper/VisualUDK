@@ -80,15 +80,30 @@ namespace VisualUDK
                 MenuItem newFile = new MenuItem();
                 newFile.Text = "&New Class";
                 newFile.Click += new EventHandler(newFile_Click);
-                treeMenu.MenuItems.Add(newFile);
+                
                 MenuItem openFile = new MenuItem();
                 openFile.Text = "&Open Class";
                 openFile.Click += new EventHandler(openFile_Click);
+                
+                MenuItem refreshFiles = new MenuItem();
+                refreshFiles.Text = "&Refresh";
+                refreshFiles.Click += new EventHandler(refreshFiles_Click);
+
+
+                treeMenu.MenuItems.Add(newFile);
                 treeMenu.MenuItems.Add(openFile);
+                treeMenu.MenuItems.Add("-");
+                treeMenu.MenuItems.Add(refreshFiles);
+
 
                 treeMenu.Show(ProjectBrowser, new Point(e.X, e.Y));
                 
             }
+        }
+
+        void refreshFiles_Click(object sender, EventArgs e)
+        {
+            PopulateProjectBrowser();
         }
 
         void openFile_Click(object sender, EventArgs e)
@@ -98,7 +113,7 @@ namespace VisualUDK
 
         void newFile_Click(object sender, EventArgs e)
         {
-            NewFile nf = new NewFile(activeTreeNode.Text);
+            NewFile nf = new NewFile(Src);
             nf.ShowDialog();
 
             PopulateProjectBrowser();
