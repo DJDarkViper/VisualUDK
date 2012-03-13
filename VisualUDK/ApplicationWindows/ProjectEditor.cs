@@ -36,6 +36,7 @@ namespace VisualUDK
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
 
+
             PopulateProjectBrowser();
             
             
@@ -90,7 +91,7 @@ namespace VisualUDK
 
         void newFile_Click(object sender, EventArgs e)
         {
-            NewFile nf = new NewFile(Src);
+            NewFile nf = new NewFile(Src+"\\Classes"); // hardcoded because.. well.. in this situation, why not?
             nf.ShowDialog();
 
             PopulateProjectBrowser();

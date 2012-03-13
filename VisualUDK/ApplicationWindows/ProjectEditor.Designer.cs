@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -585,8 +589,19 @@
             // ProjectBrowser
             // 
             this.ProjectBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Node0";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Node2";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Node1";
+            this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode3});
+            this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
             this.ProjectBrowser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProjectBrowser_MouseClick);
