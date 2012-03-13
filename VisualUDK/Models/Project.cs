@@ -156,7 +156,7 @@ namespace VisualUDK
             {
 
                 NewProject np = new NewProject();
-                np.Show();
+                np.ShowDialog();
             }
             else
             {
@@ -171,7 +171,7 @@ namespace VisualUDK
             if (FileMan.checkEnginePath())
             {
                 OpenProject op = new OpenProject();
-                op.Show();
+                op.ShowDialog();
             }
             else
             {

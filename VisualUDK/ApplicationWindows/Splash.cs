@@ -25,24 +25,32 @@ namespace VisualUDK
         {
             SplashBrowser.Url = new Uri("https://bitbucket.org/DJDarkViper/visualudk/wiki/Home");
 
+            PopulateRecentList();
+            
+        }
+
+        private void PopulateRecentList()
+        {
+            ProjectList.Clear();
+
             ProjectList.View = View.Details;
             ProjectList.FullRowSelect = true;
             ProjectList.Sorting = SortOrder.Ascending;
 
             ProjectList.Columns.Add("Recent Projects", -2, HorizontalAlignment.Left);
 
-            List<String[]> projects = new List<String[]>( Project.getProjects() );
+            List<String[]> projects = new List<String[]>(Project.getProjects());
 
             foreach (String[] project in projects)
             {
-                ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem( project[1] , 0) });
+                ProjectList.Items.AddRange(new ListViewItem[] { new ListViewItem(project[1], 0) });
             }
-            
         }
 
         private void But_NewProject_Click(object sender, EventArgs e)
         {
             Project.openNewProjectWizard();
+            PopulateRecentList();
         }
 
         private void But_OpenProject_Click(object sender, EventArgs e)
@@ -53,6 +61,7 @@ namespace VisualUDK
         private void Menu_File_NewProject_Click(object sender, EventArgs e)
         {
             Project.openNewProjectWizard();
+            PopulateRecentList();
         }
 
         private void Menu_File_OpenProject_Click(object sender, EventArgs e)
