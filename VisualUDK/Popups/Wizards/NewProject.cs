@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using VisualUDK.Utilities;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace VisualUDK.Popups.Wizards
 {
@@ -93,7 +94,7 @@ namespace VisualUDK.Popups.Wizards
 
                             sr.Close();
 
-                            File.Copy(FileMan.getEngineIni(), FileMan.getEngineIni() + ".bak."+DateTime.Now.ToString("M-d-yyyy"));
+                            File.Copy(FileMan.getEngineIni(), FileMan.getEngineIni() + ".bak."+DateTime.Now.ToString("M-d-yyyy")+"_"+Crypto.getRandomHash());
                             File.WriteAllText(FileMan.getEngineIni(), lines);
 
                         }

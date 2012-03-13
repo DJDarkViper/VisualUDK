@@ -68,6 +68,7 @@
     <Compile Include="ApplicationWindows\ProjectEditor.Designer.cs">
       <DependentUpon>ProjectEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypto.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="FileMan.cs" />
     <Compile Include="Popups\OpenProject.cs">
