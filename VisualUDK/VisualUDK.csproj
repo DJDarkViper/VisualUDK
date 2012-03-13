@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -205,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\header_newproject.png" />
+    <None Include="Resources\icon.ico" />
     <Content Include="UDK.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

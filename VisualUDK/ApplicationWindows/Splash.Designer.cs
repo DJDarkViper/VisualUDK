@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             this.Menu_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_File_NewProject = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,6 +280,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Menu_);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Splash";
             this.Text = "VisualUDK";
             this.Load += new System.EventHandler(this.Splash_Load);

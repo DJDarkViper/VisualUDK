@@ -121,7 +121,7 @@ namespace VisualUDK
                 }
                 Trace.Unindent();
 
-                ProjectBrowser.Nodes.Add(new TreeNode(Path.GetDirectoryName(dir), files.ToArray()));
+                ProjectBrowser.Nodes.Add(new TreeNode(dir, files.ToArray()));
             }
 
             ProjectBrowser.ExpandAll();
