@@ -46,29 +46,6 @@ namespace VisualUDK
             
         }
 
-        private void PopulateProjectBrowser()
-        {
-            ProjectBrowser.Nodes.Clear();
-            foreach (String dir in Directory.GetDirectories(Src))
-            {
-                Trace.WriteLine("Dir: " + dir);
-
-                List<TreeNode> files = new List<TreeNode>();
-
-                Trace.Indent();
-                foreach (String file in Directory.GetFiles(dir))
-                {
-                    Trace.WriteLine(file);
-                    files.Add(new TreeNode(file));
-                }
-                Trace.Unindent();
-
-                ProjectBrowser.Nodes.Add(new TreeNode(dir, files.ToArray()));
-            }
-
-            ProjectBrowser.ExpandAll();
-        }
-
         private void ProjectBrowser_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -122,6 +99,32 @@ namespace VisualUDK
         private void refresh_Tick(object sender, EventArgs e)
         {
             //PopulateProjectBrowser();
+        }
+
+
+
+        private void PopulateProjectBrowser()
+        {
+            ProjectBrowser.Nodes.Clear();
+            ProjectBrowser.Nodes.Add( new TreeNode( project.getName() ) );
+            foreach (String dir in Directory.GetDirectories(Src))
+            {
+                Trace.WriteLine("Dir: " + dir);
+
+                List<TreeNode> files = new List<TreeNode>();
+
+                Trace.Indent();
+                foreach (String file in Directory.GetFiles(dir))
+                {
+                    Trace.WriteLine(file);
+                    files.Add(new TreeNode(Path.GetFileName(file)));
+                }
+                Trace.Unindent();
+
+                ProjectBrowser.Nodes.Add(new TreeNode(Path.GetDirectoryName(dir), files.ToArray()));
+            }
+
+            ProjectBrowser.ExpandAll();
         }
     }
 }
