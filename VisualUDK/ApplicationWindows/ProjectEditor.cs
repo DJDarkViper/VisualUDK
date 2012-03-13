@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection;
 using VisualUDK.Popups.Wizards;
 
 namespace VisualUDK
@@ -17,6 +18,7 @@ namespace VisualUDK
 
         Project project;
         String Src;
+        ImageList images;
 
 
         // ActiveTreeNode
@@ -36,6 +38,15 @@ namespace VisualUDK
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
 
+            images = new ImageList();
+
+            images.Images.Add(Properties.Resources.HP_FolderGrey);
+            images.Images.Add(Properties.Resources.HP_Folder);
+            images.Images.Add(Properties.Resources.HP_FolderDocuments);
+            images.Images.Add(Properties.Resources.unreal_logo);
+
+            ProjectBrowser.ImageList = images;
+            
 
             PopulateProjectBrowser();
             
@@ -121,7 +132,7 @@ namespace VisualUDK
         private void PopulateProjectBrowser()
         {
             ProjectBrowser.Nodes.Clear();
-            ProjectBrowser.Nodes.Add( new TreeNode( project.getName() ) );
+            ProjectBrowser.Nodes.Add( new TreeNode( project.getName(), 3, 3 ) );
             foreach (String dir in Directory.GetDirectories(Src))
             {
                 Trace.WriteLine("Dir: " + dir);
@@ -132,11 +143,12 @@ namespace VisualUDK
                 foreach (String file in Directory.GetFiles(dir))
                 {
                     Trace.WriteLine(file);
-                    files.Add(new TreeNode(Path.GetFileName(file)));
+
+                    files.Add(new TreeNode(Path.GetFileName(file), 0, 1));
                 }
                 Trace.Unindent();
 
-                ProjectBrowser.Nodes.Add(new TreeNode(Path.GetFileName(dir), files.ToArray()));
+                ProjectBrowser.Nodes.Add(new TreeNode(Path.GetFileName(dir), 2, 2, files.ToArray()));
             }
 
             ProjectBrowser.ExpandAll();

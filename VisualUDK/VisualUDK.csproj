@@ -209,6 +209,9 @@
   <ItemGroup>
     <None Include="Resources\header_newproject.png" />
     <None Include="Resources\icon.ico" />
+    <None Include="Resources\HP-Folder.png" />
+    <None Include="Resources\HP-FolderDocuments.png" />
+    <None Include="Resources\HP-FolderGrey.png" />
     <Content Include="UDK.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

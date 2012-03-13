@@ -67,6 +67,27 @@ namespace VisualUDK.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap HP_Folder {
+            get {
+                object obj = ResourceManager.GetObject("HP_Folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HP_FolderDocuments {
+            get {
+                object obj = ResourceManager.GetObject("HP_FolderDocuments", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HP_FolderGrey {
+            get {
+                object obj = ResourceManager.GetObject("HP_FolderGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
