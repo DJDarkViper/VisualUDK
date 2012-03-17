@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode8});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +91,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.CodeEditor = new System.Windows.Forms.RichTextBox();
+            this.CodeEditor = new ScintillaNET.Scintilla();
             this.ProjectStuff = new System.Windows.Forms.TabControl();
             this.Window_Console = new System.Windows.Forms.TabPage();
             this.Window_Errors = new System.Windows.Forms.TabPage();
@@ -107,6 +107,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
             this.ProjectStuff.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -553,10 +554,8 @@
             this.CodeEditor.Location = new System.Drawing.Point(0, 0);
             this.CodeEditor.Name = "CodeEditor";
             this.CodeEditor.Size = new System.Drawing.Size(747, 445);
-            this.CodeEditor.TabIndex = 0;
-            this.CodeEditor.Text = "";
+            this.CodeEditor.TabIndex = 1;
             this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
-            this.CodeEditor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodeEditor_KeyPress);
             // 
             // ProjectStuff
             // 
@@ -595,15 +594,15 @@
             this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
-            treeNode7.Name = "Node0";
-            treeNode7.Text = "Node0";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Node2";
-            treeNode9.Name = "Node1";
-            treeNode9.Text = "Node1";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Node0";
+            treeNode5.Name = "Node2";
+            treeNode5.Text = "Node2";
+            treeNode6.Name = "Node1";
+            treeNode6.Text = "Node1";
             this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode9});
+            treeNode4,
+            treeNode6});
             this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
@@ -643,6 +642,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
             this.ProjectStuff.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -671,7 +671,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.RichTextBox CodeEditor;
         private System.Windows.Forms.TabControl ProjectStuff;
         private System.Windows.Forms.TabPage Window_Console;
         private System.Windows.Forms.TabPage Window_Errors;
@@ -714,6 +713,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem Menu_File_Exit;
         private System.Windows.Forms.Timer refresh;
+        private ScintillaNET.Scintilla CodeEditor;
     }
 }
 

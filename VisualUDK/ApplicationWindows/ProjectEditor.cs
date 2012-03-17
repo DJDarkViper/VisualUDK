@@ -162,7 +162,7 @@ namespace VisualUDK
 
                 activefile = new UDKFile(Src + "\\Classes\\" + activeTreeNode.Text);
 
-                CodeEditor.Lines = activefile.ReadContents();
+                CodeEditor.Text = String.Join("\n", activefile.ReadContents() );
 
             }
             
@@ -172,10 +172,8 @@ namespace VisualUDK
         {
             SaveFile();
         }
-
-        private void CodeEditor_KeyPress(object sender, KeyPressEventArgs e) {
-        }
-
+        
+        
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e) {
             if (e.Control && e.KeyCode == Keys.S) {
                 SaveFile();
