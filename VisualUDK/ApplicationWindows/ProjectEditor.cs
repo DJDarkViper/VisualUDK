@@ -37,6 +37,7 @@ namespace VisualUDK
             CodeEditor.ConfigurationManager.Language = "cs";
             CodeEditor.Indentation.ShowGuides = true;
             CodeEditor.Indentation.BackspaceUnindents = true;
+            CodeEditor.Margins[0].Width = 20;
             CodeEditor.ConfigurationManager.Configure();
 
             this.KeyPreview = true;
