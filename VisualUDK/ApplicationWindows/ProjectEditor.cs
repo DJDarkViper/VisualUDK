@@ -166,5 +166,11 @@ namespace VisualUDK
             }
             
         }
+
+        private void Menu_File_Save_Click(object sender, EventArgs e)
+        {
+            if (activefile != null)
+                activefile.Save( CodeEditor.Text.ToString() );
+        }
     }
 }

@@ -200,6 +200,7 @@
             this.Menu_File_Save.Name = "Menu_File_Save";
             this.Menu_File_Save.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_Save.Text = "Save";
+            this.Menu_File_Save.Click += new System.EventHandler(this.Menu_File_Save_Click);
             // 
             // Menu_File_SaveAs
             // 

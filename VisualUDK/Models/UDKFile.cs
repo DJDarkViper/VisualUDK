@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace VisualUDK {
     class UDKFile {
@@ -34,6 +35,18 @@ namespace VisualUDK {
 
             return lines.ToArray();
 
+        }
+
+        public Boolean Save(String text) {
+            try {
+                StreamWriter sw = new StreamWriter(this.path);
+                sw.Write(text);
+                sw.Close();
+                return true;
+            } catch (Exception e) {
+                Trace.WriteLine(e);
+                return false;
+            }
         }
 
 
