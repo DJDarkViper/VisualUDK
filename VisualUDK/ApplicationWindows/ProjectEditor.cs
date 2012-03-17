@@ -33,6 +33,12 @@ namespace VisualUDK
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CodeEditor.ConfigurationManager.CustomLocation = "stuff/lang";
+            CodeEditor.ConfigurationManager.Language = "cs";
+            CodeEditor.Indentation.ShowGuides = true;
+            CodeEditor.Indentation.BackspaceUnindents = true;
+            CodeEditor.ConfigurationManager.Configure();
+
             this.KeyPreview = true;
             this.Text = "VisualUDK - " + project.getName();
             this.Width = Screen.PrimaryScreen.Bounds.Width;
@@ -161,6 +167,8 @@ namespace VisualUDK
             if (File.Exists(Src + "\\Classes\\" + activeTreeNode.Text)) {
 
                 activefile = new UDKFile(Src + "\\Classes\\" + activeTreeNode.Text);
+
+                this.Text = "VisualUDK - " + project.getName() + " - " + activeTreeNode.Text;
 
                 CodeEditor.Text = String.Join("\n", activefile.ReadContents() );
 

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScintillaNET>
+  <Language Name="cs">
+    <Indentation TabWidth="4" UseTabs="true"/>
+    
+  </Language>
+</ScintillaNET>

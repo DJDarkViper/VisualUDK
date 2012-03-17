@@ -217,6 +217,12 @@
     <None Include="Resources\HP-Folder.png" />
     <None Include="Resources\HP-FolderDocuments.png" />
     <None Include="Resources\HP-FolderGrey.png" />
+    <None Include="stuff\lang\cs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="stuff\lang\default.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="UDK.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
