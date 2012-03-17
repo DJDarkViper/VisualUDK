@@ -156,7 +156,14 @@ namespace VisualUDK
 
         private void ProjectBrowser_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(activeTreeNode.Text);
+            //MessageBox.Show(activeTreeNode.Text);
+            if (File.Exists(Src + "\\Classes\\" + activeTreeNode.Text)) {
+
+                UDKFile file = new UDKFile(Src + "\\Classes\\" + activeTreeNode.Text);
+                MessageBox.Show(file.path);
+
+            }
+            
         }
     }
 }

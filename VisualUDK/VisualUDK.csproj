@@ -74,6 +74,7 @@
     <Compile Include="Crypto.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="FileMan.cs" />
+    <Compile Include="Models\UDKFile.cs" />
     <Compile Include="Popups\OpenProject.cs">
       <SubType>Form</SubType>
     </Compile>
