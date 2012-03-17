@@ -33,6 +33,7 @@ namespace VisualUDK
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             this.Text = "VisualUDK - " + project.getName();
             this.Width = Screen.PrimaryScreen.Bounds.Width;
             this.Height = Screen.PrimaryScreen.Bounds.Height;
@@ -169,8 +170,21 @@ namespace VisualUDK
 
         private void Menu_File_Save_Click(object sender, EventArgs e)
         {
+            SaveFile();
+        }
+
+        private void CodeEditor_KeyPress(object sender, KeyPressEventArgs e) {
+        }
+
+        private void CodeEditor_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Control && e.KeyCode == Keys.S) {
+                SaveFile();
+            }
+        }
+
+        public void SaveFile() {
             if (activefile != null)
-                activefile.Save( CodeEditor.Text.ToString() );
+                activefile.Save(CodeEditor.Text.ToString());
         }
     }
 }
