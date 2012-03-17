@@ -12,10 +12,7 @@ namespace VisualUDK {
         public UDKFile() {}
 
         public UDKFile(String file) {
-            if (setFile(file)) {
-                Open(this.path);
-            }
-
+            setFile(file);
         }
 
         public Boolean setFile(String file) {
@@ -25,7 +22,17 @@ namespace VisualUDK {
             } else return false;
         }
 
-        public void Open(String file) {
+        public String[] ReadContents() {
+
+            List<String> lines = new List<String>();
+            using (StreamReader sr = File.OpenText(this.path)) {
+                String l = "";
+                while((l = sr.ReadLine()) != null) {
+                    lines.Add(l);
+                }
+            }
+
+            return lines.ToArray();
 
         }
 

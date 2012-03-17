@@ -19,7 +19,7 @@ namespace VisualUDK
         Project project;
         String Src;
         ImageList images;
-
+        UDKFile activefile;
 
         // ActiveTreeNode
         TreeNode activeTreeNode;
@@ -156,11 +156,12 @@ namespace VisualUDK
 
         private void ProjectBrowser_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //MessageBox.Show(activeTreeNode.Text);
+
             if (File.Exists(Src + "\\Classes\\" + activeTreeNode.Text)) {
 
-                UDKFile file = new UDKFile(Src + "\\Classes\\" + activeTreeNode.Text);
-                MessageBox.Show(file.path);
+                activefile = new UDKFile(Src + "\\Classes\\" + activeTreeNode.Text);
+
+                CodeEditor.Lines = activefile.ReadContents();
 
             }
             
