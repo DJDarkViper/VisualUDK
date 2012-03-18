@@ -10,6 +10,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 using VisualUDK.Popups.Wizards;
+using ScintillaNET;
 
 namespace VisualUDK
 {
@@ -39,6 +40,17 @@ namespace VisualUDK
             CodeEditor.Indentation.BackspaceUnindents = true;
             CodeEditor.Margins[0].Width = 20;
             CodeEditor.ConfigurationManager.Configure();
+
+            /**
+             * Custom Autcomplete Concept:
+             * Create a ListBox, and have it follow the cursor
+             * I can do this.
+             */
+            ListBox lb = new ListBox();
+            lb.Items.Add("Test");
+            lb.BringToFront();
+            lb.Show();
+
 
             this.KeyPreview = true;
             this.Text = "VisualUDK - " + project.getName();
@@ -192,6 +204,38 @@ namespace VisualUDK
         public void SaveFile() {
             if (activefile != null)
                 activefile.Save(CodeEditor.Text.ToString());
+        }
+
+        private void CodeEditor_CharAdded(object sender, CharAddedEventArgs e) {
+            
+        }
+
+        private void Menu_Project_Compile_JustCompile_Click(object sender, EventArgs e) {
+
+        }
+
+
+        ////////
+
+        void RunWithRedirect(string cmdPath) {
+            var proc = new Process();
+            proc.StartInfo.FileName = cmdPath;
+
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.EnableRaisingEvents = true;
+            proc.StartInfo.CreateNoWindow = true;
+
+            proc.ErrorDataReceived += new DataReceivedEventHandler(proc_ErrorDataReceived);
+            proc.OutputDataReceived += new DataReceivedEventHandler(proc_OutputDataReceived);
+        }
+
+        void proc_OutputDataReceived(object sender, DataReceivedEventArgs e) {
+            
+        }
+
+        void proc_ErrorDataReceived(object sender, DataReceivedEventArgs e) {
+            
         }
     }
 }
