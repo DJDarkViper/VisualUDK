@@ -33,8 +33,8 @@ namespace VisualUDK
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CodeEditor.ConfigurationManager.CustomLocation = "stuff/lang";
-            CodeEditor.ConfigurationManager.Language = "cs";
+            CodeEditor.ConfigurationManager.CustomLocation = "Resources/uscript.xml";
+            CodeEditor.ConfigurationManager.Language = "uscript";
             CodeEditor.Indentation.ShowGuides = true;
             CodeEditor.Indentation.BackspaceUnindents = true;
             CodeEditor.Margins[0].Width = 20;
