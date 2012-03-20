@@ -71,6 +71,8 @@
             this.Menu_Project_AddNewItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_Project_Compile = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_JustCompile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_Project_Compile_Editor = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Project_Compile_Game = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,7 +98,11 @@
             this.Window_Errors = new System.Windows.Forms.TabPage();
             this.ProjectBrowser = new System.Windows.Forms.TreeView();
             this.refresh = new System.Windows.Forms.Timer(this.components);
+<<<<<<< HEAD
             this.CodeEditor = new ScintillaNET.Scintilla();
+=======
+            this.OutputConsole = new System.Windows.Forms.RichTextBox();
+>>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.Strip_.SuspendLayout();
             this.Menu_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -108,7 +114,11 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.ProjectStuff.SuspendLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
+=======
+            this.Window_Console.SuspendLayout();
+>>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.SuspendLayout();
             // 
             // Status_
@@ -351,39 +361,53 @@
             // Menu_Project_AddClass
             // 
             this.Menu_Project_AddClass.Name = "Menu_Project_AddClass";
-            this.Menu_Project_AddClass.Size = new System.Drawing.Size(150, 22);
+            this.Menu_Project_AddClass.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_AddClass.Text = "Add Class";
             // 
             // Menu_Project_AddNewItem
             // 
             this.Menu_Project_AddNewItem.Name = "Menu_Project_AddNewItem";
-            this.Menu_Project_AddNewItem.Size = new System.Drawing.Size(150, 22);
+            this.Menu_Project_AddNewItem.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_AddNewItem.Text = "Add New Item";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(147, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_Project_Compile
             // 
             this.Menu_Project_Compile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Project_Compile_JustCompile,
+            this.toolStripSeparator11,
             this.Menu_Project_Compile_Editor,
             this.Menu_Project_Compile_Game});
             this.Menu_Project_Compile.Name = "Menu_Project_Compile";
-            this.Menu_Project_Compile.Size = new System.Drawing.Size(150, 22);
+            this.Menu_Project_Compile.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_Compile.Text = "Compile";
+            // 
+            // Menu_Project_Compile_JustCompile
+            // 
+            this.Menu_Project_Compile_JustCompile.Name = "Menu_Project_Compile_JustCompile";
+            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile.Text = "Just Compile";
+            this.Menu_Project_Compile_JustCompile.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_Project_Compile_Editor
             // 
             this.Menu_Project_Compile_Editor.Name = "Menu_Project_Compile_Editor";
-            this.Menu_Project_Compile_Editor.Size = new System.Drawing.Size(131, 22);
+            this.Menu_Project_Compile_Editor.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_Compile_Editor.Text = "with Editor";
             // 
             // Menu_Project_Compile_Game
             // 
             this.Menu_Project_Compile_Game.Name = "Menu_Project_Compile_Game";
-            this.Menu_Project_Compile_Game.Size = new System.Drawing.Size(131, 22);
+            this.Menu_Project_Compile_Game.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_Compile_Game.Text = "with Game";
             // 
             // Menu_Tools
@@ -548,6 +572,19 @@
             this.splitContainer2.SplitterDistance = 445;
             this.splitContainer2.TabIndex = 5;
             // 
+<<<<<<< HEAD
+=======
+            // CodeEditor
+            // 
+            this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeEditor.Location = new System.Drawing.Point(0, 0);
+            this.CodeEditor.Name = "CodeEditor";
+            this.CodeEditor.Size = new System.Drawing.Size(747, 445);
+            this.CodeEditor.TabIndex = 1;
+            this.CodeEditor.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(this.CodeEditor_CharAdded);
+            this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
+            // 
+>>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             // ProjectStuff
             // 
             this.ProjectStuff.Controls.Add(this.Window_Console);
@@ -561,6 +598,7 @@
             // 
             // Window_Console
             // 
+            this.Window_Console.Controls.Add(this.OutputConsole);
             this.Window_Console.Location = new System.Drawing.Point(4, 22);
             this.Window_Console.Name = "Window_Console";
             this.Window_Console.Padding = new System.Windows.Forms.Padding(3);
@@ -606,6 +644,7 @@
             this.refresh.Interval = 1000;
             this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
             // 
+<<<<<<< HEAD
             // CodeEditor
             // 
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -613,6 +652,16 @@
             this.CodeEditor.Name = "CodeEditor";
             this.CodeEditor.Size = new System.Drawing.Size(747, 445);
             this.CodeEditor.TabIndex = 0;
+=======
+            // OutputConsole
+            // 
+            this.OutputConsole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OutputConsole.Location = new System.Drawing.Point(3, 3);
+            this.OutputConsole.Name = "OutputConsole";
+            this.OutputConsole.Size = new System.Drawing.Size(733, 87);
+            this.OutputConsole.TabIndex = 0;
+            this.OutputConsole.Text = "";
+>>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             // 
             // ProjectEditor
             // 
@@ -642,7 +691,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.ProjectStuff.ResumeLayout(false);
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
+=======
+            this.Window_Console.ResumeLayout(false);
+>>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,6 +766,9 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_File_Exit;
         private System.Windows.Forms.Timer refresh;
         private ScintillaNET.Scintilla CodeEditor;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_JustCompile;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.RichTextBox OutputConsole;
     }
 }
 
