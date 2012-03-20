@@ -98,11 +98,8 @@
             this.Window_Errors = new System.Windows.Forms.TabPage();
             this.ProjectBrowser = new System.Windows.Forms.TreeView();
             this.refresh = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
             this.CodeEditor = new ScintillaNET.Scintilla();
-=======
             this.OutputConsole = new System.Windows.Forms.RichTextBox();
->>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.Strip_.SuspendLayout();
             this.Menu_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -114,11 +111,8 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.ProjectStuff.SuspendLayout();
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
-=======
             this.Window_Console.SuspendLayout();
->>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.SuspendLayout();
             // 
             // Status_
@@ -572,8 +566,6 @@
             this.splitContainer2.SplitterDistance = 445;
             this.splitContainer2.TabIndex = 5;
             // 
-<<<<<<< HEAD
-=======
             // CodeEditor
             // 
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -584,7 +576,6 @@
             this.CodeEditor.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(this.CodeEditor_CharAdded);
             this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
             // 
->>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             // ProjectStuff
             // 
             this.ProjectStuff.Controls.Add(this.Window_Console);
@@ -644,7 +635,6 @@
             this.refresh.Interval = 1000;
             this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
             // 
-<<<<<<< HEAD
             // CodeEditor
             // 
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -652,7 +642,6 @@
             this.CodeEditor.Name = "CodeEditor";
             this.CodeEditor.Size = new System.Drawing.Size(747, 445);
             this.CodeEditor.TabIndex = 0;
-=======
             // OutputConsole
             // 
             this.OutputConsole.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -661,7 +650,6 @@
             this.OutputConsole.Size = new System.Drawing.Size(733, 87);
             this.OutputConsole.TabIndex = 0;
             this.OutputConsole.Text = "";
->>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             // 
             // ProjectEditor
             // 
@@ -691,11 +679,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.ProjectStuff.ResumeLayout(false);
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
-=======
             this.Window_Console.ResumeLayout(false);
->>>>>>> a1e78cb95775a2c3217d5f8ef3c8f7101c1ccd97
             this.ResumeLayout(false);
             this.PerformLayout();
 
