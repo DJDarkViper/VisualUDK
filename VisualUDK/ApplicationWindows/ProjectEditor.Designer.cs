@@ -93,13 +93,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.CodeEditor = new ScintillaNET.Scintilla();
             this.ProjectStuff = new System.Windows.Forms.TabControl();
             this.Window_Console = new System.Windows.Forms.TabPage();
+            this.OutputConsole = new System.Windows.Forms.RichTextBox();
             this.Window_Errors = new System.Windows.Forms.TabPage();
             this.ProjectBrowser = new System.Windows.Forms.TreeView();
             this.refresh = new System.Windows.Forms.Timer(this.components);
-            this.CodeEditor = new ScintillaNET.Scintilla();
-            this.OutputConsole = new System.Windows.Forms.RichTextBox();
             this.Strip_.SuspendLayout();
             this.Menu_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -110,8 +110,8 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.ProjectStuff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
+            this.ProjectStuff.SuspendLayout();
             this.Window_Console.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -246,6 +246,7 @@
             this.Menu_File_Exit.Name = "Menu_File_Exit";
             this.Menu_File_Exit.Size = new System.Drawing.Size(155, 22);
             this.Menu_File_Exit.Text = "Exit";
+            this.Menu_File_Exit.Click += new System.EventHandler(this.Menu_File_Exit_Click);
             // 
             // Menu_Edit
             // 
@@ -269,70 +270,77 @@
             // Menu_Edit_Undo
             // 
             this.Menu_Edit_Undo.Name = "Menu_Edit_Undo";
-            this.Menu_Edit_Undo.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Undo.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Undo.Text = "Undo";
+            this.Menu_Edit_Undo.Click += new System.EventHandler(this.Menu_Edit_Undo_Click);
             // 
             // Menu_Edit_Redo
             // 
             this.Menu_Edit_Redo.Name = "Menu_Edit_Redo";
-            this.Menu_Edit_Redo.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Redo.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Redo.Text = "Redo";
+            this.Menu_Edit_Redo.Click += new System.EventHandler(this.Menu_Edit_Redo_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_Edit_Cut
             // 
             this.Menu_Edit_Cut.Name = "Menu_Edit_Cut";
-            this.Menu_Edit_Cut.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Cut.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Cut.Text = "Cut";
+            this.Menu_Edit_Cut.Click += new System.EventHandler(this.Menu_Edit_Cut_Click);
             // 
             // Menu_Edit_Copy
             // 
             this.Menu_Edit_Copy.Name = "Menu_Edit_Copy";
-            this.Menu_Edit_Copy.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Copy.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Copy.Text = "Copy";
+            this.Menu_Edit_Copy.Click += new System.EventHandler(this.Menu_Edit_Copy_Click);
             // 
             // Menu_Edit_Paste
             // 
             this.Menu_Edit_Paste.Name = "Menu_Edit_Paste";
-            this.Menu_Edit_Paste.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Paste.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Paste.Text = "Paste";
+            this.Menu_Edit_Paste.Click += new System.EventHandler(this.Menu_Edit_Paste_Click);
             // 
             // Menu_Edit_Delete
             // 
             this.Menu_Edit_Delete.Name = "Menu_Edit_Delete";
-            this.Menu_Edit_Delete.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_Delete.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_Delete.Text = "Delete";
+            this.Menu_Edit_Delete.Click += new System.EventHandler(this.Menu_Edit_Delete_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_Edit_SelectAll
             // 
             this.Menu_Edit_SelectAll.Name = "Menu_Edit_SelectAll";
-            this.Menu_Edit_SelectAll.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_SelectAll.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_SelectAll.Text = "Select All";
+            this.Menu_Edit_SelectAll.Click += new System.EventHandler(this.Menu_Edit_SelectAll_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_Edit_QuickReplace
             // 
             this.Menu_Edit_QuickReplace.Name = "Menu_Edit_QuickReplace";
-            this.Menu_Edit_QuickReplace.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_QuickReplace.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_QuickReplace.Text = "Quick Replace";
             // 
             // Menu_Edit_QuickFind
             // 
             this.Menu_Edit_QuickFind.Name = "Menu_Edit_QuickFind";
-            this.Menu_Edit_QuickFind.Size = new System.Drawing.Size(149, 22);
+            this.Menu_Edit_QuickFind.Size = new System.Drawing.Size(152, 22);
             this.Menu_Edit_QuickFind.Text = "Quick Find";
             // 
             // Menu_View
@@ -383,25 +391,25 @@
             // Menu_Project_Compile_JustCompile
             // 
             this.Menu_Project_Compile_JustCompile.Name = "Menu_Project_Compile_JustCompile";
-            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(142, 22);
             this.Menu_Project_Compile_JustCompile.Text = "Just Compile";
             this.Menu_Project_Compile_JustCompile.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(139, 6);
             // 
             // Menu_Project_Compile_Editor
             // 
             this.Menu_Project_Compile_Editor.Name = "Menu_Project_Compile_Editor";
-            this.Menu_Project_Compile_Editor.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_Editor.Size = new System.Drawing.Size(142, 22);
             this.Menu_Project_Compile_Editor.Text = "with Editor";
             // 
             // Menu_Project_Compile_Game
             // 
             this.Menu_Project_Compile_Game.Name = "Menu_Project_Compile_Game";
-            this.Menu_Project_Compile_Game.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_Game.Size = new System.Drawing.Size(142, 22);
             this.Menu_Project_Compile_Game.Text = "with Game";
             // 
             // Menu_Tools
@@ -416,13 +424,13 @@
             // Menu_Tools_Settings
             // 
             this.Menu_Tools_Settings.Name = "Menu_Tools_Settings";
-            this.Menu_Tools_Settings.Size = new System.Drawing.Size(116, 22);
+            this.Menu_Tools_Settings.Size = new System.Drawing.Size(152, 22);
             this.Menu_Tools_Settings.Text = "Settings";
             // 
             // Menu_Tools_Options
             // 
             this.Menu_Tools_Options.Name = "Menu_Tools_Options";
-            this.Menu_Tools_Options.Size = new System.Drawing.Size(116, 22);
+            this.Menu_Tools_Options.Size = new System.Drawing.Size(152, 22);
             this.Menu_Tools_Options.Text = "Options";
             // 
             // Menu_Help
@@ -572,7 +580,7 @@
             this.CodeEditor.Location = new System.Drawing.Point(0, 0);
             this.CodeEditor.Name = "CodeEditor";
             this.CodeEditor.Size = new System.Drawing.Size(747, 445);
-            this.CodeEditor.TabIndex = 1;
+            this.CodeEditor.TabIndex = 0;
             this.CodeEditor.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(this.CodeEditor_CharAdded);
             this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
             // 
@@ -597,6 +605,15 @@
             this.Window_Console.TabIndex = 0;
             this.Window_Console.Text = "Console";
             this.Window_Console.UseVisualStyleBackColor = true;
+            // 
+            // OutputConsole
+            // 
+            this.OutputConsole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OutputConsole.Location = new System.Drawing.Point(3, 3);
+            this.OutputConsole.Name = "OutputConsole";
+            this.OutputConsole.Size = new System.Drawing.Size(733, 87);
+            this.OutputConsole.TabIndex = 0;
+            this.OutputConsole.Text = "";
             // 
             // Window_Errors
             // 
@@ -635,22 +652,6 @@
             this.refresh.Interval = 1000;
             this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
             // 
-            // CodeEditor
-            // 
-            this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CodeEditor.Location = new System.Drawing.Point(0, 0);
-            this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(747, 445);
-            this.CodeEditor.TabIndex = 0;
-            // OutputConsole
-            // 
-            this.OutputConsole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OutputConsole.Location = new System.Drawing.Point(3, 3);
-            this.OutputConsole.Name = "OutputConsole";
-            this.OutputConsole.Size = new System.Drawing.Size(733, 87);
-            this.OutputConsole.TabIndex = 0;
-            this.OutputConsole.Text = "";
-            // 
             // ProjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,8 +679,8 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.ProjectStuff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
+            this.ProjectStuff.ResumeLayout(false);
             this.Window_Console.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

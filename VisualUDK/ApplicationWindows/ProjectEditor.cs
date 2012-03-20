@@ -266,14 +266,37 @@ namespace VisualUDK
             }
         }
 
-        /*
-        void proc_OutputDataReceived(object sender, DataReceivedEventArgs e) {
-            OutputConsole.Text += e.Data.ToString() + "\n";
+        private void Menu_Edit_Undo_Click(object sender, EventArgs e) {
+            CodeEditor.UndoRedo.Undo();
         }
 
-        void proc_ErrorDataReceived(object sender, DataReceivedEventArgs e) {
-            
+        private void Menu_Edit_Redo_Click(object sender, EventArgs e) {
+            CodeEditor.UndoRedo.Redo();
         }
-         * */
+
+        private void Menu_Edit_Cut_Click(object sender, EventArgs e) {
+            CodeEditor.Clipboard.Cut();
+        }
+
+        private void Menu_Edit_Copy_Click(object sender, EventArgs e) {
+            CodeEditor.Clipboard.Copy();
+        }
+
+        private void Menu_Edit_Paste_Click(object sender, EventArgs e) {
+            CodeEditor.Clipboard.Paste();
+        }
+
+        private void Menu_Edit_Delete_Click(object sender, EventArgs e) {
+            CodeEditor.GetRange(CodeEditor.Selection.Start, CodeEditor.Selection.End).Text = "";
+        }
+
+        private void Menu_Edit_SelectAll_Click(object sender, EventArgs e) {
+            CodeEditor.Selection.SelectAll();
+        }
+
+        private void Menu_File_Exit_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
     }
 }
