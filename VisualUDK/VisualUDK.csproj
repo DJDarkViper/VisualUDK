@@ -54,11 +54,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ScintillaNET">
-      <HintPath>..\..\..\..\..\..\VisualStudio_Plugins\ScintillaNET\ScintillaNET.dll</HintPath>
+      <HintPath>C:\ScintillaNET\ScintillaNET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -223,6 +224,9 @@
     <None Include="stuff\lang\default.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="SciLexer.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="UDK.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

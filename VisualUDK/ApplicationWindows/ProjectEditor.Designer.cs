@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,12 +91,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.CodeEditor = new ScintillaNET.Scintilla();
             this.ProjectStuff = new System.Windows.Forms.TabControl();
             this.Window_Console = new System.Windows.Forms.TabPage();
             this.Window_Errors = new System.Windows.Forms.TabPage();
             this.ProjectBrowser = new System.Windows.Forms.TreeView();
             this.refresh = new System.Windows.Forms.Timer(this.components);
+            this.CodeEditor = new ScintillaNET.Scintilla();
             this.Strip_.SuspendLayout();
             this.Menu_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -107,8 +107,8 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
             this.ProjectStuff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).BeginInit();
             this.SuspendLayout();
             // 
             // Status_
@@ -548,15 +548,6 @@
             this.splitContainer2.SplitterDistance = 445;
             this.splitContainer2.TabIndex = 5;
             // 
-            // CodeEditor
-            // 
-            this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CodeEditor.Location = new System.Drawing.Point(0, 0);
-            this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(747, 445);
-            this.CodeEditor.TabIndex = 1;
-            this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
-            // 
             // ProjectStuff
             // 
             this.ProjectStuff.Controls.Add(this.Window_Console);
@@ -594,15 +585,15 @@
             this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Node0";
-            treeNode5.Name = "Node2";
-            treeNode5.Text = "Node2";
-            treeNode6.Name = "Node1";
-            treeNode6.Text = "Node1";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Node0";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Node2";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Node1";
             this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode6});
+            treeNode1,
+            treeNode3});
             this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
@@ -614,6 +605,14 @@
             this.refresh.Enabled = true;
             this.refresh.Interval = 1000;
             this.refresh.Tick += new System.EventHandler(this.refresh_Tick);
+            // 
+            // CodeEditor
+            // 
+            this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeEditor.Location = new System.Drawing.Point(0, 0);
+            this.CodeEditor.Name = "CodeEditor";
+            this.CodeEditor.Size = new System.Drawing.Size(747, 445);
+            this.CodeEditor.TabIndex = 0;
             // 
             // ProjectEditor
             // 
@@ -642,8 +641,8 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
             this.ProjectStuff.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CodeEditor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
