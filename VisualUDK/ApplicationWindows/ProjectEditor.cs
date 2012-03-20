@@ -11,12 +11,13 @@ using System.Diagnostics;
 using System.Reflection;
 using VisualUDK.Popups.Wizards;
 using ScintillaNET;
+using System.Threading;
 
 namespace VisualUDK
 {
     public partial class ProjectEditor : Form
     {
-
+        delegate void SetTextCallback(string text);
         Project project;
         String Src;
         ImageList images;
@@ -211,31 +212,68 @@ namespace VisualUDK
         }
 
         private void Menu_Project_Compile_JustCompile_Click(object sender, EventArgs e) {
-
+            Thread compile = new Thread( 
+                new ThreadStart (
+                    this.Compile
+                )
+            );
+            NewConsoleLine("Starting Compiler New");
+            compile.Start();
         }
 
 
         ////////
 
-        void RunWithRedirect(string cmdPath) {
+        private void Compile() {
+            this.RunWithRedirect(FileMan.getUDK(), " make");
+        }
+
+        void RunWithRedirect(string cmdPath, string args = null) {
+            
             var proc = new Process();
             proc.StartInfo.FileName = cmdPath;
+            proc.StartInfo.Arguments = args;
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.RedirectStandardError = true;
             proc.EnableRaisingEvents = true;
             proc.StartInfo.CreateNoWindow = true;
 
-            proc.ErrorDataReceived += new DataReceivedEventHandler(proc_ErrorDataReceived);
-            proc.OutputDataReceived += new DataReceivedEventHandler(proc_OutputDataReceived);
+            proc.StartInfo.UseShellExecute = false;
+
+            proc.ErrorDataReceived += proc_DataReceived;
+            proc.OutputDataReceived += proc_DataReceived;
+
+            proc.Start();
+
+            proc.BeginErrorReadLine();
+            proc.BeginOutputReadLine();
+
+            proc.WaitForExit();
+            
         }
 
+        void proc_DataReceived(object sender, DataReceivedEventArgs e) {
+            NewConsoleLine(e.Data);
+        }
+
+        void NewConsoleLine(String text) {
+            if (this.OutputConsole.InvokeRequired) {
+                SetTextCallback d = new SetTextCallback(NewConsoleLine);
+                this.Invoke(d, new object[] { text });
+            } else {
+                OutputConsole.Text += text + "\n";
+            }
+        }
+
+        /*
         void proc_OutputDataReceived(object sender, DataReceivedEventArgs e) {
-            
+            OutputConsole.Text += e.Data.ToString() + "\n";
         }
 
         void proc_ErrorDataReceived(object sender, DataReceivedEventArgs e) {
             
         }
+         * */
     }
 }

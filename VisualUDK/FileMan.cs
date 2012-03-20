@@ -25,6 +25,10 @@ namespace VisualUDK
             return FileMan.getGame()+"Config/DefaultEngine.ini";
         }
 
+        public static String getUDK() {
+            return FileMan.getBase()+"Binaries/Win32/UDK.exe";
+        }
+
 
         /*
          * Paths
