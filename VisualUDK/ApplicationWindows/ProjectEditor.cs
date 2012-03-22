@@ -42,6 +42,8 @@ namespace VisualUDK
             CodeEditor.Margins[0].Width = 20;
             CodeEditor.ConfigurationManager.Configure();
 
+            OutputConsole.ReadOnly = true;
+
             /**
              * Custom Autcomplete Concept:
              * Create a ListBox, and have it follow the cursor
@@ -225,7 +227,7 @@ namespace VisualUDK
         ////////
 
         private void Compile() {
-            this.RunWithRedirect(FileMan.getUDK(), " make");
+            this.RunWithRedirect(FileMan.getCompiler(), "make -full");
         }
 
         void RunWithRedirect(string cmdPath, string args = null) {
@@ -263,6 +265,8 @@ namespace VisualUDK
                 this.Invoke(d, new object[] { text });
             } else {
                 OutputConsole.Text += text + "\n";
+                OutputConsole.SelectionStart = OutputConsole.Text.Length;
+                OutputConsole.ScrollToCaret();
             }
         }
 
