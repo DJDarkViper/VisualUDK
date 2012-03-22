@@ -214,20 +214,94 @@ namespace VisualUDK
         }
 
         private void Menu_Project_Compile_JustCompile_Click(object sender, EventArgs e) {
-            Thread compile = new Thread( 
-                new ThreadStart (
-                    this.Compile
-                )
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+                () => {
+                    Compile();
+                    syncEvent.Set();
+                }
             );
-            NewConsoleLine("Starting Compiler New");
+            NewConsoleLine("Starting Compiler: Quick Compile");
             compile.Start();
         }
 
 
+        private void Menu_Project_Compile_JustCompile_Editor_Click(object sender, EventArgs e) {
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+               () => {
+                   Compile();
+                   syncEvent.Set();
+                   LaunchEditor();
+               }
+            );
+            NewConsoleLine("Starting Compiler: Quick Compile + Editor");
+            compile.Start();
+         
+        }
+
+        private void Menu_Project_Compile_JustCompile_Game_Click(object sender, EventArgs e) {
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+                () => {
+                    Compile();
+                    syncEvent.Set();
+                    LaunchGame();
+                }
+            );
+            NewConsoleLine("Starting Compiler: Quick Compile + Game");
+            compile.Start();
+        }
+
+        private void Menu_Project_Compile_FullCompile_Click(object sender, EventArgs e) {
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+                () => {
+                    Compile("-full");
+                    syncEvent.Set();
+                }
+            );
+            NewConsoleLine("Starting Compiler: Full Recompile");
+            compile.Start();
+        }
+
+        private void Menu_Project_Compile_FullCompile_Editor_Click(object sender, EventArgs e) {
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+                () => {
+                    Compile("-full");
+                    syncEvent.Set();
+                    LaunchEditor();
+                }
+            );
+            NewConsoleLine("Starting Compiler: Full Recompile + Editor");
+            compile.Start();
+        }
+
+        private void Menu_Project_Compile_FullCompile_Game_Click(object sender, EventArgs e) {
+            ManualResetEvent syncEvent = new ManualResetEvent(false);
+            Thread compile = new Thread(
+                () => {
+                   Compile("-full");
+                   syncEvent.Set();
+                   LaunchGame();
+               }
+            );
+            NewConsoleLine("Starting Compiler: Full Recompile + Game");
+            compile.Start();
+        }
+
         ////////
 
-        private void Compile() {
-            this.RunWithRedirect(FileMan.getCompiler(), "make -full");
+        private void FastCompile() { Compile(); }
+        private void FullCompile() { Compile("-full"); }
+
+        private void Compile(String args = "") {
+            if (args != "") args = " " + args;
+
+            args = "make" + args;
+
+            this.RunWithRedirect(FileMan.getCompiler(), args);
         }
 
         void RunWithRedirect(string cmdPath, string args = null) {
@@ -301,6 +375,18 @@ namespace VisualUDK
         private void Menu_File_Exit_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+
+        private void LaunchEditor() {
+            NewConsoleLine("++++ Launching Editor, Please Wait... ++++");
+            Process.Start( FileMan.getEditor(), "editor" );
+        }
+
+        private void LaunchGame() {
+            NewConsoleLine("++++ Launching Game, Please Wait... ++++");
+            Process.Start(FileMan.getGameExe());
+        }
+        
 
     }
 }

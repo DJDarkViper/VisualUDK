@@ -29,6 +29,13 @@ namespace VisualUDK
             return FileMan.getBase()+"Binaries/Win32/UDK.com";
         }
 
+        public static String getEditor() {
+            return FileMan.getBase() + "Binaries/UDKLift.exe";
+        }
+
+        public static String getGameExe() {
+            return FileMan.getBase() + "Binaries/Win32/UDK.exe";
+        }
 
         /*
          * Paths

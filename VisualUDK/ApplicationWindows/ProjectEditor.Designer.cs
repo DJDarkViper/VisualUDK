@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode11});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,9 +72,11 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_Project_Compile = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Project_Compile_JustCompile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.Menu_Project_Compile_Editor = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Project_Compile_Game = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_JustCompile_Editor = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_JustCompile_Game = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_FullCompile = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_FullCompile_Editor = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Project_Compile_FullCompile_Game = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools_Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools_Options = new System.Windows.Forms.ToolStripMenuItem();
@@ -270,77 +272,77 @@
             // Menu_Edit_Undo
             // 
             this.Menu_Edit_Undo.Name = "Menu_Edit_Undo";
-            this.Menu_Edit_Undo.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Undo.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Undo.Text = "Undo";
             this.Menu_Edit_Undo.Click += new System.EventHandler(this.Menu_Edit_Undo_Click);
             // 
             // Menu_Edit_Redo
             // 
             this.Menu_Edit_Redo.Name = "Menu_Edit_Redo";
-            this.Menu_Edit_Redo.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Redo.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Redo.Text = "Redo";
             this.Menu_Edit_Redo.Click += new System.EventHandler(this.Menu_Edit_Redo_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
             // 
             // Menu_Edit_Cut
             // 
             this.Menu_Edit_Cut.Name = "Menu_Edit_Cut";
-            this.Menu_Edit_Cut.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Cut.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Cut.Text = "Cut";
             this.Menu_Edit_Cut.Click += new System.EventHandler(this.Menu_Edit_Cut_Click);
             // 
             // Menu_Edit_Copy
             // 
             this.Menu_Edit_Copy.Name = "Menu_Edit_Copy";
-            this.Menu_Edit_Copy.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Copy.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Copy.Text = "Copy";
             this.Menu_Edit_Copy.Click += new System.EventHandler(this.Menu_Edit_Copy_Click);
             // 
             // Menu_Edit_Paste
             // 
             this.Menu_Edit_Paste.Name = "Menu_Edit_Paste";
-            this.Menu_Edit_Paste.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Paste.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Paste.Text = "Paste";
             this.Menu_Edit_Paste.Click += new System.EventHandler(this.Menu_Edit_Paste_Click);
             // 
             // Menu_Edit_Delete
             // 
             this.Menu_Edit_Delete.Name = "Menu_Edit_Delete";
-            this.Menu_Edit_Delete.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_Delete.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_Delete.Text = "Delete";
             this.Menu_Edit_Delete.Click += new System.EventHandler(this.Menu_Edit_Delete_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(146, 6);
             // 
             // Menu_Edit_SelectAll
             // 
             this.Menu_Edit_SelectAll.Name = "Menu_Edit_SelectAll";
-            this.Menu_Edit_SelectAll.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_SelectAll.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_SelectAll.Text = "Select All";
             this.Menu_Edit_SelectAll.Click += new System.EventHandler(this.Menu_Edit_SelectAll_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(146, 6);
             // 
             // Menu_Edit_QuickReplace
             // 
             this.Menu_Edit_QuickReplace.Name = "Menu_Edit_QuickReplace";
-            this.Menu_Edit_QuickReplace.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_QuickReplace.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_QuickReplace.Text = "Quick Replace";
             // 
             // Menu_Edit_QuickFind
             // 
             this.Menu_Edit_QuickFind.Name = "Menu_Edit_QuickFind";
-            this.Menu_Edit_QuickFind.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Edit_QuickFind.Size = new System.Drawing.Size(149, 22);
             this.Menu_Edit_QuickFind.Text = "Quick Find";
             // 
             // Menu_View
@@ -381,36 +383,58 @@
             // 
             this.Menu_Project_Compile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_Project_Compile_JustCompile,
-            this.toolStripSeparator11,
-            this.Menu_Project_Compile_Editor,
-            this.Menu_Project_Compile_Game});
+            this.Menu_Project_Compile_FullCompile});
             this.Menu_Project_Compile.Name = "Menu_Project_Compile";
             this.Menu_Project_Compile.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_Compile.Text = "Compile";
             // 
             // Menu_Project_Compile_JustCompile
             // 
+            this.Menu_Project_Compile_JustCompile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Project_Compile_JustCompile_Editor,
+            this.Menu_Project_Compile_JustCompile_Game});
             this.Menu_Project_Compile_JustCompile.Name = "Menu_Project_Compile_JustCompile";
-            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(142, 22);
+            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(152, 22);
             this.Menu_Project_Compile_JustCompile.Text = "Just Compile";
             this.Menu_Project_Compile_JustCompile.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Click);
             // 
-            // toolStripSeparator11
+            // Menu_Project_Compile_JustCompile_Editor
             // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(139, 6);
+            this.Menu_Project_Compile_JustCompile_Editor.Name = "Menu_Project_Compile_JustCompile_Editor";
+            this.Menu_Project_Compile_JustCompile_Editor.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile_Editor.Text = "with Editor";
+            this.Menu_Project_Compile_JustCompile_Editor.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Editor_Click);
             // 
-            // Menu_Project_Compile_Editor
+            // Menu_Project_Compile_JustCompile_Game
             // 
-            this.Menu_Project_Compile_Editor.Name = "Menu_Project_Compile_Editor";
-            this.Menu_Project_Compile_Editor.Size = new System.Drawing.Size(142, 22);
-            this.Menu_Project_Compile_Editor.Text = "with Editor";
+            this.Menu_Project_Compile_JustCompile_Game.Name = "Menu_Project_Compile_JustCompile_Game";
+            this.Menu_Project_Compile_JustCompile_Game.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile_Game.Text = "with Game";
+            this.Menu_Project_Compile_JustCompile_Game.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Game_Click);
             // 
-            // Menu_Project_Compile_Game
+            // Menu_Project_Compile_FullCompile
             // 
-            this.Menu_Project_Compile_Game.Name = "Menu_Project_Compile_Game";
-            this.Menu_Project_Compile_Game.Size = new System.Drawing.Size(142, 22);
-            this.Menu_Project_Compile_Game.Text = "with Game";
+            this.Menu_Project_Compile_FullCompile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Project_Compile_FullCompile_Editor,
+            this.Menu_Project_Compile_FullCompile_Game});
+            this.Menu_Project_Compile_FullCompile.Name = "Menu_Project_Compile_FullCompile";
+            this.Menu_Project_Compile_FullCompile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile.Text = "Full Compile";
+            this.Menu_Project_Compile_FullCompile.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Click);
+            // 
+            // Menu_Project_Compile_FullCompile_Editor
+            // 
+            this.Menu_Project_Compile_FullCompile_Editor.Name = "Menu_Project_Compile_FullCompile_Editor";
+            this.Menu_Project_Compile_FullCompile_Editor.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile_Editor.Text = "with Editor";
+            this.Menu_Project_Compile_FullCompile_Editor.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Editor_Click);
+            // 
+            // Menu_Project_Compile_FullCompile_Game
+            // 
+            this.Menu_Project_Compile_FullCompile_Game.Name = "Menu_Project_Compile_FullCompile_Game";
+            this.Menu_Project_Compile_FullCompile_Game.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile_Game.Text = "with Game";
+            this.Menu_Project_Compile_FullCompile_Game.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Game_Click);
             // 
             // Menu_Tools
             // 
@@ -424,13 +448,13 @@
             // Menu_Tools_Settings
             // 
             this.Menu_Tools_Settings.Name = "Menu_Tools_Settings";
-            this.Menu_Tools_Settings.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Tools_Settings.Size = new System.Drawing.Size(116, 22);
             this.Menu_Tools_Settings.Text = "Settings";
             // 
             // Menu_Tools_Options
             // 
             this.Menu_Tools_Options.Name = "Menu_Tools_Options";
-            this.Menu_Tools_Options.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Tools_Options.Size = new System.Drawing.Size(116, 22);
             this.Menu_Tools_Options.Text = "Options";
             // 
             // Menu_Help
@@ -631,15 +655,15 @@
             this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Node0";
-            treeNode2.Name = "Node2";
-            treeNode2.Text = "Node2";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Node1";
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "Node0";
+            treeNode11.Name = "Node2";
+            treeNode11.Text = "Node2";
+            treeNode12.Name = "Node1";
+            treeNode12.Text = "Node1";
             this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3});
+            treeNode10,
+            treeNode12});
             this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
@@ -729,8 +753,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Project_AddNewItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile;
-        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_Editor;
-        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_Game;
         private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Settings;
         private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Options;
         private System.Windows.Forms.ToolStripMenuItem Menu_Help_Documentation;
@@ -753,8 +775,12 @@
         private System.Windows.Forms.Timer refresh;
         private ScintillaNET.Scintilla CodeEditor;
         private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_JustCompile;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.RichTextBox OutputConsole;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_FullCompile;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_JustCompile_Editor;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_JustCompile_Game;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_FullCompile_Editor;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile_FullCompile_Game;
     }
 }
 
