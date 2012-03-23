@@ -386,6 +386,11 @@ namespace VisualUDK
             NewConsoleLine("++++ Launching Game, Please Wait... ++++");
             Process.Start(FileMan.getGameExe());
         }
+
+        private void Menu_Help_About_Click(object sender, EventArgs e) {
+            Popups.About ab = new Popups.About();
+            ab.ShowDialog();
+        }
         
 
     }

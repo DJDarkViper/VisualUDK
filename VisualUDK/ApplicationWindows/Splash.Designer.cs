@@ -159,7 +159,7 @@
             // 
             this.Menu_Help_About.Name = "Menu_Help_About";
             this.Menu_Help_About.Size = new System.Drawing.Size(173, 22);
-            this.Menu_Help_About.Text = "About";
+            this.Menu_Help_About.Text = "About VisualUDK";
             this.Menu_Help_About.Click += new System.EventHandler(this.Menu_Help_About_Click);
             // 
             // panel1

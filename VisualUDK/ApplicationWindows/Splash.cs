@@ -81,7 +81,8 @@ namespace VisualUDK
 
         private void Menu_Help_About_Click(object sender, EventArgs e)
         {
-
+            About ab = new About();
+            ab.ShowDialog();
         }
 
         private void Menu_Help_CheckForUpdates_Click(object sender, EventArgs e)

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -401,14 +401,14 @@
             // Menu_Project_Compile_JustCompile_Editor
             // 
             this.Menu_Project_Compile_JustCompile_Editor.Name = "Menu_Project_Compile_JustCompile_Editor";
-            this.Menu_Project_Compile_JustCompile_Editor.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile_Editor.Size = new System.Drawing.Size(131, 22);
             this.Menu_Project_Compile_JustCompile_Editor.Text = "with Editor";
             this.Menu_Project_Compile_JustCompile_Editor.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Editor_Click);
             // 
             // Menu_Project_Compile_JustCompile_Game
             // 
             this.Menu_Project_Compile_JustCompile_Game.Name = "Menu_Project_Compile_JustCompile_Game";
-            this.Menu_Project_Compile_JustCompile_Game.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile_Game.Size = new System.Drawing.Size(131, 22);
             this.Menu_Project_Compile_JustCompile_Game.Text = "with Game";
             this.Menu_Project_Compile_JustCompile_Game.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Game_Click);
             // 
@@ -497,6 +497,7 @@
             this.Menu_Help_About.Name = "Menu_Help_About";
             this.Menu_Help_About.Size = new System.Drawing.Size(173, 22);
             this.Menu_Help_About.Text = "About VisualUDK";
+            this.Menu_Help_About.Click += new System.EventHandler(this.Menu_Help_About_Click);
             // 
             // Menu_
             // 
@@ -655,15 +656,15 @@
             this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
-            treeNode10.Name = "Node0";
-            treeNode10.Text = "Node0";
-            treeNode11.Name = "Node2";
-            treeNode11.Text = "Node2";
-            treeNode12.Name = "Node1";
-            treeNode12.Text = "Node1";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Node0";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Node2";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Node1";
             this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode12});
+            treeNode1,
+            treeNode3});
             this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;

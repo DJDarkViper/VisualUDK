@@ -80,6 +80,12 @@
     <Compile Include="DB.cs" />
     <Compile Include="FileMan.cs" />
     <Compile Include="Models\UDKFile.cs" />
+    <Compile Include="Popups\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\OpenProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="ApplicationWindows\ProjectEditor.resx">
       <DependentUpon>ProjectEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\OpenProject.resx">
       <DependentUpon>OpenProject.cs</DependentUpon>
@@ -221,6 +230,7 @@
     <None Include="Resources\uscript.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\me.jpg" />
     <Content Include="SciLexer.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
