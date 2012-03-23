@@ -23,7 +23,7 @@ namespace VisualUDK
 
         private void Splash_Load(object sender, EventArgs e)
         {
-            SplashBrowser.Url = new Uri("https://bitbucket.org/DJDarkViper/visualudk/wiki/Home");
+            SplashBrowser.Url = new Uri("http://www.blackjaguarstudios.com/software/visualudk/");
 
             PopulateRecentList();
             
