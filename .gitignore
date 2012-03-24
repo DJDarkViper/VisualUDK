@@ -1,3 +1,4 @@
-VisualUDK/bin/Release/*
-VisualUDK/bin/Debug/*
-VisualUDK/obj/*
+*/bin/Release/*
+*/bin/Debug/*
+*/obj/*
+*.suo
