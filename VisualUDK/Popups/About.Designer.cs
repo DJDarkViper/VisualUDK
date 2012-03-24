@@ -28,6 +28,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Close = new System.Windows.Forms.Button();
+            this.Donate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,25 +56,36 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(228, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 117);
+            this.label2.Size = new System.Drawing.Size(291, 156);
             this.label2.TabIndex = 2;
             this.label2.Text = resources.GetString("label2.Text");
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(370, 154);
+            this.Close.Location = new System.Drawing.Point(231, 210);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(149, 42);
+            this.Close.Size = new System.Drawing.Size(285, 42);
             this.Close.TabIndex = 3;
             this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
+            // Donate
+            // 
+            this.Donate.Location = new System.Drawing.Point(12, 210);
+            this.Donate.Name = "Donate";
+            this.Donate.Size = new System.Drawing.Size(210, 42);
+            this.Donate.TabIndex = 4;
+            this.Donate.Text = "Donate!";
+            this.Donate.UseVisualStyleBackColor = true;
+            this.Donate.Click += new System.EventHandler(this.Donate_Click);
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 208);
+            this.ClientSize = new System.Drawing.Size(528, 262);
+            this.Controls.Add(this.Donate);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button Donate;
     }
 }

@@ -126,7 +126,10 @@ a little easier and better.
 
 If you like this, or are using VisualUDK in your own project,
 please drop me a line ( djdarkviper at hotmail dot com) to
-let me know about it! </value>
+let me know about it! 
+
+Also if you like what you see and want improvements, 
+please help me out by donating to the project! </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

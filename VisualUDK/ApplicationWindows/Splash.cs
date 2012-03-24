@@ -19,6 +19,7 @@ namespace VisualUDK
         public Splash()
         {
             InitializeComponent();
+            this.Text = "VisualUDK " + Settings.getVersionString();
         }
 
         private void Splash_Load(object sender, EventArgs e)

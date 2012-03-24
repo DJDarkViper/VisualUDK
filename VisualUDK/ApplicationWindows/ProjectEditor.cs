@@ -56,7 +56,7 @@ namespace VisualUDK
 
 
             this.KeyPreview = true;
-            this.Text = "VisualUDK - " + project.getName();
+            this.Text = "VisualUDK "+Settings.getVersionString()+" - " + project.getName();
             this.Width = Screen.PrimaryScreen.Bounds.Width;
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);

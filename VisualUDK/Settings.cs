@@ -11,6 +11,8 @@ namespace VisualUDK
 {
     class Settings
     {
+        public static String version = "1.0.0";
+        public static String state = "b";
         static UDKDataSet udkDataSet = new UDKDataSet();
         static QueriesTableAdapter query = new QueriesTableAdapter();
         static optionsTableAdapter options = new optionsTableAdapter();
@@ -29,6 +31,10 @@ namespace VisualUDK
                 MessageBox.Show("Could not update engine path at this time, please try again:\n"+e.ToString());
                 return false;
             }
+        }
+
+        public static String getVersionString() {
+            return "v"+Settings.version + Settings.state;
         }
     }
 }
