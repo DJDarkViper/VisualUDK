@@ -80,6 +80,7 @@
     <Compile Include="DB.cs" />
     <Compile Include="FileMan.cs" />
     <Compile Include="Models\UDKFile.cs" />
+    <Compile Include="Models\Update.cs" />
     <Compile Include="Popups\About.cs">
       <SubType>Form</SubType>
     </Compile>
