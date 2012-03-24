@@ -33,7 +33,6 @@
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_File_NewProject = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_File_OpenProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_File_RecentProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_File_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +77,6 @@
             this.Menu_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_File_NewProject,
             this.Menu_File_OpenProject,
-            this.Menu_File_RecentProjects,
             this.toolStripSeparator1,
             this.Menu_File_Exit});
             this.Menu_File.Name = "Menu_File";
@@ -88,33 +86,26 @@
             // Menu_File_NewProject
             // 
             this.Menu_File_NewProject.Name = "Menu_File_NewProject";
-            this.Menu_File_NewProject.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_NewProject.Size = new System.Drawing.Size(152, 22);
             this.Menu_File_NewProject.Text = "New Project";
             this.Menu_File_NewProject.Click += new System.EventHandler(this.Menu_File_NewProject_Click);
             // 
             // Menu_File_OpenProject
             // 
             this.Menu_File_OpenProject.Name = "Menu_File_OpenProject";
-            this.Menu_File_OpenProject.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_OpenProject.Size = new System.Drawing.Size(152, 22);
             this.Menu_File_OpenProject.Text = "Open Project";
             this.Menu_File_OpenProject.Click += new System.EventHandler(this.Menu_File_OpenProject_Click);
-            // 
-            // Menu_File_RecentProjects
-            // 
-            this.Menu_File_RecentProjects.Name = "Menu_File_RecentProjects";
-            this.Menu_File_RecentProjects.Size = new System.Drawing.Size(155, 22);
-            this.Menu_File_RecentProjects.Text = "Recent Projects";
-            this.Menu_File_RecentProjects.Click += new System.EventHandler(this.Menu_File_RecentProjects_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // Menu_File_Exit
             // 
             this.Menu_File_Exit.Name = "Menu_File_Exit";
-            this.Menu_File_Exit.Size = new System.Drawing.Size(155, 22);
+            this.Menu_File_Exit.Size = new System.Drawing.Size(152, 22);
             this.Menu_File_Exit.Text = "Exit";
             this.Menu_File_Exit.Click += new System.EventHandler(this.Menu_File_Exit_Click);
             // 
@@ -316,7 +307,6 @@
         private System.Windows.Forms.ListView ProjectList;
         private System.Windows.Forms.ToolStripMenuItem Menu_File_NewProject;
         private System.Windows.Forms.ToolStripMenuItem Menu_File_OpenProject;
-        private System.Windows.Forms.ToolStripMenuItem Menu_File_RecentProjects;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Menu_Help_CheckForUpdates;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
