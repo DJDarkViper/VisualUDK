@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             this.Menu_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SplashBrowser = new System.Windows.Forms.WebBrowser();
+            this.Strip_ = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Menu_.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,26 +88,26 @@
             // Menu_File_NewProject
             // 
             this.Menu_File_NewProject.Name = "Menu_File_NewProject";
-            this.Menu_File_NewProject.Size = new System.Drawing.Size(152, 22);
+            this.Menu_File_NewProject.Size = new System.Drawing.Size(143, 22);
             this.Menu_File_NewProject.Text = "New Project";
             this.Menu_File_NewProject.Click += new System.EventHandler(this.Menu_File_NewProject_Click);
             // 
             // Menu_File_OpenProject
             // 
             this.Menu_File_OpenProject.Name = "Menu_File_OpenProject";
-            this.Menu_File_OpenProject.Size = new System.Drawing.Size(152, 22);
+            this.Menu_File_OpenProject.Size = new System.Drawing.Size(143, 22);
             this.Menu_File_OpenProject.Text = "Open Project";
             this.Menu_File_OpenProject.Click += new System.EventHandler(this.Menu_File_OpenProject_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
             // 
             // Menu_File_Exit
             // 
             this.Menu_File_Exit.Name = "Menu_File_Exit";
-            this.Menu_File_Exit.Size = new System.Drawing.Size(152, 22);
+            this.Menu_File_Exit.Size = new System.Drawing.Size(143, 22);
             this.Menu_File_Exit.Text = "Exit";
             this.Menu_File_Exit.Click += new System.EventHandler(this.Menu_File_Exit_Click);
             // 
@@ -222,6 +224,7 @@
             this.ProjectList.UseCompatibleStateImageBehavior = false;
             this.ProjectList.SelectedIndexChanged += new System.EventHandler(this.ProjectList_SelectedIndexChanged);
             this.ProjectList.DoubleClick += new System.EventHandler(this.ProjectList_DoubleClick);
+            this.ProjectList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProjectList_MouseClick);
             // 
             // panel4
             // 
@@ -261,6 +264,11 @@
             this.SplashBrowser.Size = new System.Drawing.Size(516, 335);
             this.SplashBrowser.TabIndex = 0;
             this.SplashBrowser.Url = new System.Uri("", System.UriKind.Relative);
+            // 
+            // Strip_
+            // 
+            this.Strip_.Name = "Strip_";
+            this.Strip_.Size = new System.Drawing.Size(61, 4);
             // 
             // Splash
             // 
@@ -312,6 +320,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem Menu_Tools;
         private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Options;
+        private System.Windows.Forms.ContextMenuStrip Strip_;
 
 
     }

@@ -116,6 +116,45 @@ namespace VisualUDK
             }
             
         }
+
+        private void ProjectList_MouseClick(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Left)
+            {
+                //activeTreeNode = ProjectBrowser.GetNodeAt(e.X, e.Y);
+            } else if (e.Button == MouseButtons.Right) {
+                ContextMenu ctxProj = new ContextMenu();
+
+                MenuItem openProject = new MenuItem();
+                openProject.Text = "&Open Project";
+                openProject.Click += new EventHandler(openProject_Click);
+
+                MenuItem deleteProject = new MenuItem();
+                deleteProject.Text = "&Delete Project";
+                deleteProject.Click += new EventHandler(deleteProject_Click);
+
+                ctxProj.MenuItems.AddRange(new MenuItem[]{openProject, deleteProject});
+
+                ctxProj.Show(ProjectList, new Point(e.X, e.Y));
+            }
+        }
+
+        void deleteProject_Click(object sender, EventArgs e) {
+            String item = ProjectList.SelectedItems[0].Text;
+            Project project = new Project(item);
+            DeleteProjectChooser del = new DeleteProjectChooser(project.getName());
+            del.ShowDialog();
+            MessageBox.Show( del.delType );
+        }
+
+        void openProject_Click(object sender, EventArgs e) {
+            String item = ProjectList.SelectedItems[0].Text;
+            Project project = new Project(item);
+            if (project.open()) {
+                //this.Hide(); // figure this one out later
+            } else {
+                MessageBox.Show("Could not open project");
+            }
+        }
  
     }
 }

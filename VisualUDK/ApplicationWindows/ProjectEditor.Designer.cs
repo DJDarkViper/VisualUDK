@@ -365,19 +365,19 @@
             // Menu_Project_AddClass
             // 
             this.Menu_Project_AddClass.Name = "Menu_Project_AddClass";
-            this.Menu_Project_AddClass.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_AddClass.Size = new System.Drawing.Size(150, 22);
             this.Menu_Project_AddClass.Text = "Add Class";
             // 
             // Menu_Project_AddNewItem
             // 
             this.Menu_Project_AddNewItem.Name = "Menu_Project_AddNewItem";
-            this.Menu_Project_AddNewItem.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_AddNewItem.Size = new System.Drawing.Size(150, 22);
             this.Menu_Project_AddNewItem.Text = "Add New Item";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(147, 6);
             // 
             // Menu_Project_Compile
             // 
@@ -385,7 +385,7 @@
             this.Menu_Project_Compile_JustCompile,
             this.Menu_Project_Compile_FullCompile});
             this.Menu_Project_Compile.Name = "Menu_Project_Compile";
-            this.Menu_Project_Compile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile.Size = new System.Drawing.Size(150, 22);
             this.Menu_Project_Compile.Text = "Compile";
             // 
             // Menu_Project_Compile_JustCompile
@@ -394,7 +394,7 @@
             this.Menu_Project_Compile_JustCompile_Editor,
             this.Menu_Project_Compile_JustCompile_Game});
             this.Menu_Project_Compile_JustCompile.Name = "Menu_Project_Compile_JustCompile";
-            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_JustCompile.Size = new System.Drawing.Size(142, 22);
             this.Menu_Project_Compile_JustCompile.Text = "Just Compile";
             this.Menu_Project_Compile_JustCompile.Click += new System.EventHandler(this.Menu_Project_Compile_JustCompile_Click);
             // 
@@ -418,21 +418,21 @@
             this.Menu_Project_Compile_FullCompile_Editor,
             this.Menu_Project_Compile_FullCompile_Game});
             this.Menu_Project_Compile_FullCompile.Name = "Menu_Project_Compile_FullCompile";
-            this.Menu_Project_Compile_FullCompile.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile.Size = new System.Drawing.Size(142, 22);
             this.Menu_Project_Compile_FullCompile.Text = "Full Compile";
             this.Menu_Project_Compile_FullCompile.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Click);
             // 
             // Menu_Project_Compile_FullCompile_Editor
             // 
             this.Menu_Project_Compile_FullCompile_Editor.Name = "Menu_Project_Compile_FullCompile_Editor";
-            this.Menu_Project_Compile_FullCompile_Editor.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile_Editor.Size = new System.Drawing.Size(131, 22);
             this.Menu_Project_Compile_FullCompile_Editor.Text = "with Editor";
             this.Menu_Project_Compile_FullCompile_Editor.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Editor_Click);
             // 
             // Menu_Project_Compile_FullCompile_Game
             // 
             this.Menu_Project_Compile_FullCompile_Game.Name = "Menu_Project_Compile_FullCompile_Game";
-            this.Menu_Project_Compile_FullCompile_Game.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Project_Compile_FullCompile_Game.Size = new System.Drawing.Size(131, 22);
             this.Menu_Project_Compile_FullCompile_Game.Text = "with Game";
             this.Menu_Project_Compile_FullCompile_Game.Click += new System.EventHandler(this.Menu_Project_Compile_FullCompile_Game_Click);
             // 
