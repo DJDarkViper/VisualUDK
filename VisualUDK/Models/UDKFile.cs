@@ -10,7 +10,9 @@ namespace VisualUDK {
 
         public String path;
 
-        public UDKFile() {}
+        public UDKFile() {
+            // new file?
+        }
 
         public UDKFile(String file) {
             setFile(file);

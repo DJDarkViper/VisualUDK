@@ -94,7 +94,7 @@ namespace VisualUDK
         private void Menu_Tools_Options_Click(object sender, EventArgs e)
         {
             Options op = new Options();
-            op.Show();
+            op.ShowDialog();
         }
 
         private void ProjectList_SelectedIndexChanged(object sender, EventArgs e)

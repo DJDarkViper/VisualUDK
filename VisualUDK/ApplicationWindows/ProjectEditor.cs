@@ -25,7 +25,7 @@ namespace VisualUDK
 
         // ActiveTreeNode
         TreeNode activeTreeNode;
-
+        
         public ProjectEditor(int id)
         {
             project = new Project(id);

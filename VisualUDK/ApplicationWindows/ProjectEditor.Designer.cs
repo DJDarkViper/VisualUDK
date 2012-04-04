@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectEditor));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node1", new System.Windows.Forms.TreeNode[] {
+            treeNode8});
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Strip_ = new System.Windows.Forms.MenuStrip();
             this.Menu_File = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +78,6 @@
             this.Menu_Project_Compile_FullCompile_Editor = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Project_Compile_FullCompile_Game = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Tools_Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Tools_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Help_Documentation = new System.Windows.Forms.ToolStripMenuItem();
@@ -439,22 +438,15 @@
             // Menu_Tools
             // 
             this.Menu_Tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_Tools_Settings,
             this.Menu_Tools_Options});
             this.Menu_Tools.Name = "Menu_Tools";
             this.Menu_Tools.Size = new System.Drawing.Size(48, 20);
             this.Menu_Tools.Text = "Tools";
             // 
-            // Menu_Tools_Settings
-            // 
-            this.Menu_Tools_Settings.Name = "Menu_Tools_Settings";
-            this.Menu_Tools_Settings.Size = new System.Drawing.Size(116, 22);
-            this.Menu_Tools_Settings.Text = "Settings";
-            // 
             // Menu_Tools_Options
             // 
             this.Menu_Tools_Options.Name = "Menu_Tools_Options";
-            this.Menu_Tools_Options.Size = new System.Drawing.Size(116, 22);
+            this.Menu_Tools_Options.Size = new System.Drawing.Size(152, 22);
             this.Menu_Tools_Options.Text = "Options";
             // 
             // Menu_Help
@@ -478,6 +470,7 @@
             // 
             // Menu_Help_Documentation_Search
             // 
+            this.Menu_Help_Documentation_Search.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Menu_Help_Documentation_Search.Name = "Menu_Help_Documentation_Search";
             this.Menu_Help_Documentation_Search.Size = new System.Drawing.Size(100, 23);
             // 
@@ -656,15 +649,15 @@
             this.ProjectBrowser.LabelEdit = true;
             this.ProjectBrowser.Location = new System.Drawing.Point(0, 0);
             this.ProjectBrowser.Name = "ProjectBrowser";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Node0";
-            treeNode2.Name = "Node2";
-            treeNode2.Text = "Node2";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Node1";
+            treeNode7.Name = "Node0";
+            treeNode7.Text = "Node0";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Node2";
+            treeNode9.Name = "Node1";
+            treeNode9.Text = "Node1";
             this.ProjectBrowser.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode3});
+            treeNode7,
+            treeNode9});
             this.ProjectBrowser.PathSeparator = "/";
             this.ProjectBrowser.Size = new System.Drawing.Size(204, 568);
             this.ProjectBrowser.TabIndex = 0;
@@ -754,7 +747,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Project_AddNewItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem Menu_Project_Compile;
-        private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Settings;
         private System.Windows.Forms.ToolStripMenuItem Menu_Tools_Options;
         private System.Windows.Forms.ToolStripMenuItem Menu_Help_Documentation;
         private System.Windows.Forms.ToolStripTextBox Menu_Help_Documentation_Search;
